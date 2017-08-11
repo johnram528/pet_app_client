@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import NavBar from '../NavBar.js'
 import HomeSearchForm from '../components/HomeSearchForm'
+import BottomContent from '../components/BottomContent'
 
 
 class HomePage extends Component {
@@ -12,6 +13,7 @@ class HomePage extends Component {
             <HomeSearchForm/>
           </div>
           <div className='bottom-content-container'>
+            <BottomContent/>
           </div>
         </div>
     );
