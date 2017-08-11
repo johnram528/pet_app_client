@@ -259,6 +259,18 @@
   }
   */
 
+  .btn-primary {
+    background-color: #00a699;
+    border-color:#6aa399;
+    opacity: .8
+  }
+
+  .btn-primary:hover {
+    background-color: #00a699;
+    border-color: #6aa399;
+    opacity: 1
+  }
+
   .buttons-tab {
     width: 109%;
     margin-left: -15px;

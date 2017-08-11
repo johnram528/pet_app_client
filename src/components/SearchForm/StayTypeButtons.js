@@ -13,7 +13,7 @@ export default (props) => {
                 <input hidden name='service' type='radio' value='daycare'></input>
               </label>
             </li>
-            <li className='btn btn-default'>
+            <li className='btn btn-primary'>
               <label>  Paseo 
                 <input hidden name='service' type='radio' value='walking'></input>
               </label>
