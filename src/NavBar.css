@@ -75,6 +75,25 @@ ul .dropdown-menu {
   border-color: transparent;
 }
 
+  .navbar-default .navbar-brand{
+    font-family: Megrim;
+    font-size: 32px;
+    color: #80e8e0;
+  } 
+
+  .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus,   {
+
+    color: #00a699;
+  } 
+
+  .navbar-default .navbar-nav > li > a {
+     color: white; /*Change active text color here*/
+  }
+  
+  .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:active, .navbar-default .navbar-nav > li > a:focus {
+     color: #80e8e0; /*Change active text color here*/
+  }
+
 
 
 /*.navbar {
