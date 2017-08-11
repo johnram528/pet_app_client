@@ -1,0 +1,84 @@
+
+nav a {
+  color: white
+}
+
+ul .dropdown-menu {
+  background: #5E6468;
+}
+
+@media (min-width: 768px) {
+  .navbar-toggle {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  nav.navbar {
+    background: white;
+    border-color: #373737;
+    margin-bottom: -10px;
+  }
+}
+
+@media (min-width: 768px){
+.navbar-header {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+.navbar-header {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+@media (min-width: 768px){
+  .navbar-wrapper {
+    background-color: transparent;
+  }
+}
+
+.navbar-wrapper {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    position: relative;
+    z-index: 100;
+}
+
+
+@media (min-width: 768px){
+.header {
+    background: transparent;
+  }
+}
+
+@media (min-width: 768px){
+.navbar-header {
+    float: left;
+  }
+}
+
+.header.navbar-fixed-top{
+    position: absolute;
+}
+
+.navbar-fixed-top, .navbar-fixed-bottom {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.navbar-default {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+
+
+/*.navbar {
+    position: relative;
+    min-height: 50px;
+    border: 1px solid transparent;
+}*/
