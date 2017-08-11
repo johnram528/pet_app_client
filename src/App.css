@@ -356,5 +356,9 @@ em {
   color: #80e8e0;
 }
 
+.mapWrapper {
+  width: 900px;
+  height: 900px;
+}
 
 

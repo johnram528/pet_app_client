@@ -11,7 +11,7 @@ export default (props) => {
     <Navbar navbar-default navbar-fixed-top header>
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="#">SIMO</a>
+            <a href="/">SIMO</a>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>

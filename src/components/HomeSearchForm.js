@@ -5,8 +5,10 @@ import 'react-dates/lib/css/_datepicker.css';
 import 'moment/locale/es.js';
 import Geosuggest from 'react-geosuggest';
 import StayTypeButtons from './SearchForm/StayTypeButtons'
-import SearchButton from './SearchForm/SearchButton'
+// import SearchButton from './SearchForm/SearchButton'
 import TopContent from './TopContent'
+import { BrowserRouter as Router } from 'react-router-dom'
+import ReactTooltip from 'react-tooltip'
 
 
 class HomeSearchForm extends Component {
@@ -16,8 +18,13 @@ class HomeSearchForm extends Component {
       startDate: '',
       endDate: '',
       focusedInput: '',
+      location: []
     }
   }
+  handleOnSearchClick() {
+      debugger
+      this.props.history.push(`/search/?lat=${this.state.location.lat}&lng=${this.state.location.lng}`)
+    }
   render () {
     return (
             <div className='simo-content-wrap'>
@@ -57,7 +64,7 @@ class HomeSearchForm extends Component {
                           placeholder="Dirección o Ubicación"
                           initialValue=""
                           country="do"
-                          onSuggestSelect={this.onSuggestSelect}
+                          onSuggestSelect={location => this.setState({ location: location.location })}
                           location={new google.maps.LatLng(53.558572, 9.9278215)}
                           highlightMatch={true}
                           radius="20" />
@@ -65,7 +72,10 @@ class HomeSearchForm extends Component {
 
                     </div>
                     <div className='row'>
-                        <SearchButton/>
+                          <div className='search-form-submit col-xs-4 col-lg-4' data-tip='Buscar Cuidadores'>
+                          <i className="fa fa-paw fa-2x  " aria-hidden="true" onClick={this.handleOnSearchClick()}></i>
+                        <ReactTooltip place="bottom" type="light" effect="solid"/>
+                      </div>
                     </div>
                   </form>
                 </div>
