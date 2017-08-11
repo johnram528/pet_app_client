@@ -309,24 +309,7 @@
   }
 
 
-  .navbar-default .navbar-brand{
-    font-family: Megrim;
-    font-size: 32px;
-    color: #80e8e0;
-  } 
 
-  .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus  {
-
-    color: #00a699;
-  } 
-
-  .navbar-default .navbar-nav > li > a {
-     color: white; /*Change active text color here*/
-  }
-  
-  .navbar-default .navbar-nav > li > a:hover, a:active {
-     color: #80e8e0; /*Change active text color here*/
-  }
 
   .search-form-submit > .fa {
     display: inline-block;
@@ -346,6 +329,7 @@
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
     font-size: 34px;
+    cursor: pointer;
     text-rendering: auto;
     background: #00a699;
     color: #80e8e0;
