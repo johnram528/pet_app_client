@@ -10,11 +10,18 @@
 
   .bottom-content-container {
     height: 60vw;
+    margin: -20px;
     background-color:grey;
   }
 
   .top-content-container {
     position: relative;
+  }
+
+  .footer-content-container {
+    height: 30vw;
+    margin: -20px;
+    background-color: yellow
   }
 
 .banner-text {
