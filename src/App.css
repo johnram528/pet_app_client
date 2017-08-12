@@ -265,7 +265,7 @@
     opacity: .8
   }
 
-  .btn-primary:hover {
+  .btn-primary:hover, .btn-primary:active, .btn-primary:focus, .btn-primary:visited, .btn-primary:link  {
     background-color: #00a699;
     border-color: #6aa399;
     opacity: 1
@@ -357,8 +357,8 @@ em {
 }
 
 .mapWrapper {
-  width: 900px;
-  height: 900px;
+  width: 500px;
+  height: 700px;
 }
 
 

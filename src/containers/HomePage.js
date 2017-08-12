@@ -13,7 +13,7 @@ import Geosuggest from 'react-geosuggest';
 import StayTypeButtons from '../components/SearchForm/StayTypeButtons'
 // import SearchButton from './SearchForm/SearchButton'
 import TopContent from '../components/TopContent'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import ReactTooltip from 'react-tooltip'
 
 class HomePage extends Component {
@@ -27,8 +27,7 @@ class HomePage extends Component {
     }
   }
   handleOnSearchClick() {
-      debugger
-      this.props.history.push(`/search/?lat=${this.state.location.lat}&lng=${this.state.location.lng}`)
+      this.props.history.push(`/search/?lat=${this.state.location.lat}&lng=${this.state.location.lng}`, { lat: this.state.location.lat, lng: this.state.location.lng })
     }
   render() {
     return (
@@ -81,7 +80,7 @@ class HomePage extends Component {
                     </div>
                     <div className='row'>
                         <div className='search-form-submit col-xs-4 col-lg-4' data-tip='Buscar Cuidadores'>
-                          <i className="fa fa-paw fa-2x  " aria-hidden="true" onClick={()=> this.handleOnSearchClick()}></i>
+                            <i className="fa fa-paw fa-2x  " aria-hidden="true" onClick={()=> this.handleOnSearchClick()}></i>
                         <ReactTooltip place="bottom" type="light" effect="solid"/>
                       </div>
                     </div>
