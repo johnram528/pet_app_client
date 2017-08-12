@@ -1,0 +1,47 @@
+.map-wrap {
+  width: 500px;
+  height: 650px;
+}
+
+.search-page-header {
+  background-color: black;
+}
+
+.search-page-footer {
+  background-color: orange;
+  position: absolute;
+  top: 100%;
+  width: 100vw;
+  height: 50vh;
+}
+
+.search-page-content {
+  margin-top: -15px;
+}
+
+.search-page-form-wrap {
+  background-color: blue;
+  height: 160px;
+ 
+}
+
+.search-page-results-wrap {
+  background-color: yellow;
+  height: 1200px;
+
+}
+
+.map-wrap {
+  background-color: red;
+  margin-top: 20px;
+  width: 40%;
+  float: right;
+  height: 87.4vh;
+}
+
+.search-left-wrap {
+  height: 90vh;
+  overflow-y: scroll;
+  width: 60%;
+  float: left;
+}

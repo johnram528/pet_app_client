@@ -16,7 +16,7 @@ export default class SimoMap extends Component {
   static defaultProps = {
 
     center: [18.4596542, -68.95741729999997],
-    zoom: 12,
+    zoom: 13,
     greatPlaceCoords: {lat: 18.4596542, lng: 69.95741729999997}
 
   };

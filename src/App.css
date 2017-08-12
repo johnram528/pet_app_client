@@ -1,4 +1,4 @@
-  .App {
+ .App {
     text-align: center;
     font-family: Quicksand;
   }
@@ -9,7 +9,7 @@
 
 
   .bottom-content-container {
-    height: 60vw;
+    height: 100vh;
     margin: -20px;
     background-color:grey;
   }
@@ -19,7 +19,7 @@
   }
 
   .footer-content-container {
-    height: 30vw;
+    height: 50vh;
     margin: -20px;
     background-color: yellow
   }
@@ -240,18 +240,15 @@
     
       justify-content: space-around;
   }
-
   .stay-type-buttons {
     display: flex;
     justify-content: center
   }
-
   .buttons-tab {
     width: 100%;
     display: flex;
     justify-content: space-between;
   }
-
   .row {
     display: flex;
     align-items: center;
@@ -354,18 +351,6 @@
 
 em {
   color: #80e8e0;
-}
-
-.mapWrapper {
-  width: 500px;
-  height: 680px;
-  display: inline-block;
-  float: left;
-  margin-left: 20px
-}
-
-.search-page-wrap {
-  background-color: #11171A
 }
 
 
