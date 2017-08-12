@@ -358,7 +358,14 @@ em {
 
 .mapWrapper {
   width: 500px;
-  height: 700px;
+  height: 680px;
+  display: inline-block;
+  float: left;
+  margin-left: 20px
+}
+
+.search-page-wrap {
+  background-color: #11171A
 }
 
 

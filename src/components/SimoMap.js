@@ -16,8 +16,9 @@ export default class SimoMap extends Component {
   static defaultProps = {
 
     center: [18.4596542, -68.95741729999997],
-    zoom: 13,
+    zoom: 12,
     greatPlaceCoords: {lat: 18.4596542, lng: 69.95741729999997}
+
   };
 
  
@@ -33,7 +34,10 @@ export default class SimoMap extends Component {
        // apiKey={'AIzaSyBGHYuzgpfOXiomCVvN8d9rZW2zNeiLd-Y'}
         
         center={this.props.center}
-        zoom={this.props.zoom}>
+        zoom={this.props.zoom}
+        options={{
+          scrollwheel: false,
+       }}>
 
   </GoogleMap>
     );
