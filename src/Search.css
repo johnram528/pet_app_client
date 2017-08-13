@@ -28,13 +28,16 @@
 .search-page-results-wrap {
   background-color: yellow;
   height: 1200px;
-
+  width: 100%;
+ 
 }
 
 .map-wrap {
   background-color: red;
   margin-top: 20px;
-  width: 40%;
+  position: relative;
+  right: 5%;
+  width: 35%;
   float: right;
   height: 87.4vh;
 }
@@ -42,6 +45,27 @@
 .search-left-wrap {
   height: 90vh;
   overflow-y: scroll;
-  width: 60%;
+  position: relative;
+  width: 55%;
   float: left;
+  left: 5%;
+}
+
+.search-results {
+  width: 100%;
+}
+
+.search-sitter-card {
+  width: 100%;
+  height: 200px;
+  border-style: solid;
+  border-color: grey;
+  border-right: none;
+  list-style: none;
+  margin-top: 5px;
+  margin-right: -20px;
+}
+
+.card-pic {
+  height: 100px;
 }

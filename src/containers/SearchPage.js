@@ -3,6 +3,7 @@ import NavBar from '../NavBar.js'
 import Footer from '../components/Footer'
 import SimoMap from '../components/SimoMap' 
 import '../Search.css'
+import SearchResults from '../components/SearchResults/SearchResults'
 
 class SearchPage extends Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class SearchPage extends Component {
                 <h1>Search Form</h1>
               </div>
               <div className='search-page-results-wrap'>
-                <h1>Search Results</h1>
+                <SearchResults/>
               </div>
             </div>
             <div  className='map-wrap'>
