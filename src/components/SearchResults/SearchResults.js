@@ -15,10 +15,10 @@ export default (props) => (
               <div className='card-name'>NAME</div>
               <div className='card-badges'></div>
             </div>
-            <div className='profile-header hidden-xs'>HEADER</div>
-            <div className='card-location'>LOCATION</div>
-            <div className='card-review'>RATING</div>
           </div>
+          <div className='profile-header hidden-xs'>HEADER</div>
+          <div className='card-location'>LOCATION</div>
+          <div className='card-review'>RATING</div>
         </div>
         <div className='col-xs-3 col-md-4 min-price-div'>
           <div>
