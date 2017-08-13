@@ -27,7 +27,12 @@ class HomePage extends Component {
     }
   }
   handleOnSearchClick() {
-      this.props.history.push(`/search/?lat=${this.state.location.lat}&lng=${this.state.location.lng}`, { lat: this.state.location.lat, lng: this.state.location.lng })
+      console.log(this.state.location.length > 0)
+      if(this.state.location.length > 0 ){
+        this.props.history.push(`/search/?lat=${this.state.location.lat}&lng=${this.state.location.lng}`, { lat: this.state.location.lat, lng: this.state.location.lng })
+      }else{
+      this.props.history.push(`/search/?lat=${this.state.location.lat}&lng=${this.state.location.lng}`, { lat: 18.4596542, lng: -69.95741729999997 }) 
+      } 
     }
   render() {
     return (

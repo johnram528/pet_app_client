@@ -58,7 +58,7 @@
 .search-sitter-card {
   width: 100%;
   height: 200px;
-  border-style: solid;
+  border: solid 1px #80e8e0;
   border-color: grey;
   border-right: none;
   list-style: none;
