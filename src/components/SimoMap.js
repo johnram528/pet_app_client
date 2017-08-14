@@ -1,7 +1,6 @@
 import React, {PropTypes, Component} from 'react';
-
-
 import GoogleMap from 'google-map-react';
+import SitterMarker from './SitterMarker'
 
 
 export default class SimoMap extends Component {
@@ -29,6 +28,8 @@ export default class SimoMap extends Component {
 
 
   render() {
+    const sitters = this.props.results.sitters.map ((sitter, i)=>
+      <SitterMarker lat={sitter.center[0]} lng={sitter.center[1]} text={`${i}.${sitter.name}`}/>)
     return (
        <GoogleMap
        // apiKey={'AIzaSyBGHYuzgpfOXiomCVvN8d9rZW2zNeiLd-Y'}
@@ -38,8 +39,8 @@ export default class SimoMap extends Component {
         options={{
           scrollwheel: false,
        }}>
-
-  </GoogleMap>
+       {sitters}
+      </GoogleMap>
     );
 
   }

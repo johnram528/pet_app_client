@@ -7,6 +7,7 @@ export default class SearchResult extends Component {
     super(props)
   }
   render() {
+
     const cards = this.props.results.sitters.map ((sitter) =>
       <div className='search-sitter-card'>
       <div className='top-card-row'>
@@ -43,31 +44,11 @@ export default class SearchResult extends Component {
       </div>
     </div>
     )
+  
 
 
   return(
   <div className='search-results'>
-    {cards}
-    {cards}
-    {cards}
-    {cards}
-    {cards}
-    {cards}
-    {cards}
-    {cards}
-    {cards}
-    {cards}
-    {cards}
-    {cards}
-    {cards}
-    {cards}
-    {cards}
-    {cards}
-    {cards}
-    {cards}
-    {cards}
-    {cards}
-    {cards}
     {cards}
   </div>
   )
