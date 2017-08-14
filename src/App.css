@@ -274,12 +274,12 @@
     display: flex;
   }
 
-  .row {
+/*  .row {
     display: flex;
     align-items: center;
     justify-content: space-around;
     position: relative;
-  }
+  }*/
   .btn {
       display: inline-block;
       padding: 2px;
@@ -353,4 +353,10 @@ em {
   color: #80e8e0;
 }
 
+.search-form-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
 

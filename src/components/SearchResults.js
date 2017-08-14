@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../SitterCard.css'
+import {Link} from 'react-router-dom'
 
 export default class SearchResult extends Component {
   constructor(props) {
@@ -17,7 +18,7 @@ export default class SearchResult extends Component {
         <div className='col-xs-6 col-sm-7 col-md-5 col-lg-6'>
           <div className='row'>
             <div className='col-xs-12'>
-              <div className='card-name'>{sitter.name}</div>
+              <div className='card-name'><Link to='/'><strong>{sitter.name}</strong></Link></div>
               <div className='card-badges'></div>
             </div>
           </div>
@@ -26,7 +27,7 @@ export default class SearchResult extends Component {
           <div className='card-review'>{sitter.rating}</div>
         </div>
         <div className='col-xs-3 col-md-4 min-price-div'>
-          <div>
+          <div className='money-corner'>
             <span className='rate'>{'$' + sitter.rate}</span>
             <br className='hidden-sm hidden-md hidden-lg'/>
             <span className='card-frequency'>{'/' +sitter.frequency}</span>

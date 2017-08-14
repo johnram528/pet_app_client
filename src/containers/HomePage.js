@@ -27,14 +27,12 @@ class HomePage extends Component {
     }
   }
   handleOnSearchClick() {
-      console.log(this.state.location.length > 0)
-      if(this.state.location.length > 0 ){
-        this.props.history.push(`/search/?lat=${this.state.location.lat}&lng=${this.state.location.lng}`, { lat: this.state.location.lat, lng: this.state.location.lng })
-      }else{
-      this.props.history.push(`/search/?lat=${this.state.location.lat}&lng=${this.state.location.lng}`, { lat: 18.4596542, lng: -69.95741729999997 }) 
-      } 
-    }
+    this.state.location.length != 0 ? this.props.history.push('/search', { lat: this.state.location.lat, lng: this.state.location.lng }) :
+      this.props.history.push('/search', { lat: 18.4596542, lng: -69.95741729999997 })
+  }
+
   render() {
+    console.log(this.state.location)
     return (
         <div className='main-content-wrap'>
           <NavBar/>
@@ -83,7 +81,7 @@ class HomePage extends Component {
                       </div>
 
                     </div>
-                    <div className='row'>
+                    <div className='row search-form-row'>
                         <div className='search-form-submit col-xs-4 col-lg-4' data-tip='Buscar Cuidadores'>
                             <i className="fa fa-paw fa-2x  " aria-hidden="true" onClick={()=> this.handleOnSearchClick()}></i>
                         <ReactTooltip place="bottom" type="light" effect="solid"/>

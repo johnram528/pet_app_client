@@ -6,3 +6,67 @@
 .card-pic {
   margin-left: -15px;
 }
+
+.card-name a {
+  font-size: 26px;
+  color: #00a699;
+  font-weight: 200;
+  margin-left: 15px;
+}
+
+.card-name {
+  text-align: justify;
+  opacity: .85; 
+  overflow: hidden; 
+}
+
+.card-name:hover {
+  opacity: 1;
+}
+
+.profile-header {
+  text-align: justify;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: bold;
+  margin-left: 15px;
+  font-size: 16px;
+}
+
+.card-location {
+  text-align: justify;
+  margin-top: 4px;
+  white-space: nowrap;
+  font-weight: 100;
+  font-size: 13px;
+  opacity: .8;
+  margin-left: 15px;
+}
+
+.card-review {
+  text-align: justify; 
+  overflow: hidden;
+  margin-left: 15px;
+}
+
+.rate {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.service-list {
+    text-align: initial;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.money-corner {
+  text-align: end;
+  margin-top: 5px;
+}
+
+.sitter-bio {
+  text-align: initial;
+  font-size: 13px;
+}
