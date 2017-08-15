@@ -1,6 +1,6 @@
 
-const K_WIDTH = 40;
-const K_HEIGHT = 40;
+const K_WIDTH = 25;
+const K_HEIGHT = 25;
 
 const sitterMarkerStyle = {
   // initially any map object has left top corner at lat lng coordinates
@@ -11,14 +11,19 @@ const sitterMarkerStyle = {
   left: -K_WIDTH / 2,
   top: -K_HEIGHT / 2,
 
-  border: '5px solid #f44336',
+  border: '1px solid',
   borderRadius: K_HEIGHT,
-  backgroundColor: 'white',
+  backgroundColor: '#80e8e0',
   textAlign: 'center',
-  color: '#3f51b5',
+  color: 'white',
   fontSize: 16,
   fontWeight: 'bold',
-  padding: 4
+  padding: 1
 };
 
-export {sitterMarkerStyle};
+const sitterMarkerStyleHover = {
+  ...sitterMarkerStyle, 
+  backgroundColor: '#00a699'
+}
+
+export {sitterMarkerStyle, sitterMarkerStyleHover};

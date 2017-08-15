@@ -1,5 +1,5 @@
 import React, { Component} from 'react'
-import {sitterMarkerStyle} from './SitterMarkerStyle'
+import {sitterMarkerStyle, sitterMarkerStyleHover} from './SitterMarkerStyle'
 export default class SitterMarker extends Component {
 
 
@@ -8,9 +8,10 @@ export default class SitterMarker extends Component {
   
 
   render() {
+    const style = this.props.$hover ? sitterMarkerStyleHover : sitterMarkerStyle;
     return (
-       <div style={sitterMarkerStyle}>
-          {this.props.text}
+       <div style={style}>
+          <i className="fa fa-paw" aria-hidden="true"></i>
        </div>
     );
   }

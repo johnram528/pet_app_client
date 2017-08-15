@@ -28,6 +28,7 @@ export default class SimoMap extends Component {
 
 
   render() {
+
     const sitters = this.props.results.sitters.map ((sitter, i)=>
       <SitterMarker lat={sitter.center[0]} lng={sitter.center[1]} text={`${i}.${sitter.name}`}/>)
     return (
@@ -38,10 +39,12 @@ export default class SimoMap extends Component {
         zoom={this.props.zoom}
         options={{
           scrollwheel: false,
+          
        }}>
        {sitters}
+
       </GoogleMap>
     );
-
+    ;
   }
 }
