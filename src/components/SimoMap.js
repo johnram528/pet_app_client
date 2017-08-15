@@ -39,7 +39,8 @@ export default class SimoMap extends Component {
         zoom={this.props.zoom}
         options={{
           scrollwheel: false,
-          
+          clickableIcons: false,
+
        }}>
        {sitters}
 
