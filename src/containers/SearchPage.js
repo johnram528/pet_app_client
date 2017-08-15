@@ -1,18 +1,22 @@
 import React, { Component } from 'react'
 import NavBar from '../NavBar.js'
 import Footer from '../components/Footer'
-import SimoMap from '../components/SimoMap' 
+// import SimoMap from '../components/SimoMap' 
 import '../Search.css'
 import SearchResults from '../components/SearchResults.js'
+
 
 class SearchPage extends Component {
   constructor(props) {
     super(props)
       this.state = {
-        location: []
+        location: [], 
+        activeId: null,
       }
     }
-  
+  componentDidMount() {
+    debugger
+  }
 
   render() {
     console.log(this.props.location.state)
@@ -28,23 +32,12 @@ class SearchPage extends Component {
             <NavBar/>
           </section>
           <section className='search-page-content'>
-            <div className='search-page-content-wrap'>
-              <div  className='search-left-wrap'>
-                <div  className='search-page-form-wrap'>
-                  <h1>Search Form</h1>
-                </div>
-                <div className='search-page-results-wrap'>
+
                   <SearchResults
                   results = {results}
+                  center={center}
                   />
-                </div>
-              </div>
-            </div>
-              <div  className='map-wrap'>
-                <SimoMap 
-                center={center}
-                results={results}/>
-              </div>
+     
           </section>
           <section className='search-page-footer'>
             <Footer/>
@@ -56,5 +49,18 @@ class SearchPage extends Component {
 
 export default SearchPage;
 
-
+            // <div className='search-page-content-wrap'>
+            //   <div  className='search-left-wrap'>
+            //     <div  className='search-page-form-wrap'>
+            //       <h1>Search Form</h1>
+            //     </div>
+            //     <div className='search-page-results-wrap'>
+            //                </div>
+            //   </div>
+            // </div>
+            //   <div  className='map-wrap'>
+            //     <SimoMap 
+            //     center={center}
+            //     results={results}/>
+            //   </div>
            

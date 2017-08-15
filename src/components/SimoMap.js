@@ -40,7 +40,7 @@ export default class SimoMap extends Component {
         options={{
           scrollwheel: false,
           clickableIcons: false,
-
+        
        }}>
        {sitters}
 

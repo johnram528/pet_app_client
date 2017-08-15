@@ -1,15 +1,38 @@
-import React, { Component } from 'react'
+import React, {PropTypes, Component} from 'react';
+import GoogleMap from 'google-map-react';
+import SitterMarker from './SitterMarker'
 import '../SitterCard.css'
 import {Link} from 'react-router-dom'
 
 export default class SearchResult extends Component {
+    static propTypes = {
+    center: PropTypes.array,
+    zoom: PropTypes.number,
+    greatPlaceCoords: PropTypes.any
+  };
+
+
+  static defaultProps = {
+
+    center: [18.4596542, -68.95741729999997],
+    zoom: 13,
+    greatPlaceCoords: {lat: 18.4596542, lng: 69.95741729999997}
+
+  };
+
   constructor(props) {
     super(props)
+
   }
+
+  handleClick() {
+    debugger
+  }
+
   render() {
 
     const cards = this.props.results.sitters.map ((sitter, i) =>
-      <div className='search-sitter-card'>
+      <div className='search-sitter-card' ref={sitter.name} id={i} onClick={()=> this.handleClick()} >
       <div className='top-card-row'>
         <div className='col-xs-3 col-sm-2 col-md-3 col-lg-2'>
           <div className='card-pic'>
@@ -45,12 +68,41 @@ export default class SearchResult extends Component {
     </div>
     )
 
+    const sittersMarkers = this.props.results.sitters.map ((sitter, i)=>
+      <SitterMarker lat={sitter.center[0]} lng={sitter.center[1]} text={`${i}.${sitter.name}`}/>)
 
 
   return(
-  <div className='search-results'>
-    {cards}
-  </div>
+             <div className='search-page-content-wrap'>
+              <div  className='search-left-wrap'>
+                <div  className='search-page-form-wrap'>
+                  <h1>Search Form</h1>
+                </div>
+                <div className='search-page-results-wrap'>
+                  <div className='search-results'>
+                    {cards}
+                  </div>
+                </div>
+              </div>
+              <div  className='map-wrap'>
+                <GoogleMap
+         // apiKey={'AIzaSyBGHYuzgpfOXiomCVvN8d9rZW2zNeiLd-Y'}
+          
+                center={this.props.center}
+                zoom={this.props.zoom}
+                options={{
+                  scrollwheel: false,
+                  clickableIcons: false,
+
+
+                }}
+                ref='map'>
+               {sittersMarkers}
+
+                </GoogleMap>
+              </div>
+            </div>
+
   )
   }
 
