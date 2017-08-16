@@ -1,0 +1,62 @@
+.search-button-wrap {
+  /*background-color: grey;*/
+}
+
+.search-page-buttons-row {
+  height: 42px;
+}
+
+.stay-button {
+/*  background-color: yellow;*/
+  height: 100%;
+  border: 1px solid #ddd;
+  opacity: .6
+}
+
+.stay-button-active {
+  /*background-color: yellow;*/
+  height: 100%;
+  border-top: 3px solid #80e8e0;
+}
+
+.dates-location-wrap {
+  margin-top: 15px;
+  height: 34px
+  ;
+}
+
+.dates-location-inputs-row {
+
+  ;
+}
+
+.search-page-dates {
+    background-color: red;
+    height: 100%;
+    float: right;
+    margin-right: 40px;
+}
+
+.search-page-location {
+    background-color: orange;
+    height: 100%;
+    margin-left: 40px;
+}
+
+.search-bottom-filters {
+  height: 40px;
+  margin-top: 15px
+}
+.pet-size-buttons {
+    background-color: yellow;
+    height: 100%;
+    margin-left: 40px;
+}
+
+.pet-qty-buttons {
+    background-color: blue;
+    height: 100%;
+    float: right;
+    margin-right: 40px;
+
+}

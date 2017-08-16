@@ -3,6 +3,7 @@ import GoogleMap from 'google-map-react';
 import SitterMarker from './SitterMarker'
 import '../SitterCard.css'
 import {Link} from 'react-router-dom'
+import SearchPageForm from './SearchForm/SearchPageForm'
 
 export default class SearchResult extends Component {
     static propTypes = {
@@ -76,7 +77,12 @@ export default class SearchResult extends Component {
              <div className='search-page-content-wrap'>
               <div  className='search-left-wrap'>
                 <div  className='search-page-form-wrap'>
-                  <h1>Search Form</h1>
+                  <SearchPageForm
+                    handleBoardingClick={this.props.handleBoardingClick.bind(this)}
+                    handleDaycareClick={this.props.handleDaycareClick.bind(this)}
+                    handleWalkingClick={this.props.handleWalkingClick.bind(this)}
+                    stayType = {this.props.stayType}
+                    />
                 </div>
                 <div className='search-page-results-wrap'>
                   <div className='search-results'>
