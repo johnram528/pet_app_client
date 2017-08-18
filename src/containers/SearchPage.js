@@ -13,6 +13,9 @@ class SearchPage extends Component {
         location: [], 
         activeId: null,
         stayType: 'Alojamiento',
+        startDate: '',
+        endDate: '',
+
       }
     }
   componentDidMount() {
@@ -43,6 +46,14 @@ class SearchPage extends Component {
     })
   }
 
+  handleOnDatesChange(startDate, endDate){
+    this.setState({ startDate, endDate})
+  }
+
+  handleOnFocusChange(focusedInput) {
+    this.setState({focusedInput})
+  }
+
   render() {
     console.log(this.props.location.state)
     const center = [this.props.location.state.lat, this.props.location.state.lng] 
@@ -67,6 +78,11 @@ class SearchPage extends Component {
                   handleDaycareClick={this.handleDaycareClick.bind(this)}
                   handleWalkingClick={this.handleWalkingClick.bind(this)}
                   stayType = {this.state.stayType}
+                  startDate = {this.state.startDate}
+                  endDate = {this.state.endDate}
+                  focusedInput = {this.state.focusedInput}
+                  handleOnDatesChange = {this.handleOnDatesChange.bind(this)}
+                  handleOnFocusChange = {this.handleOnFocusChange.bind(this)}
                   />
      
           </section>

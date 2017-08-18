@@ -82,6 +82,11 @@ export default class SearchResult extends Component {
                     handleDaycareClick={this.props.handleDaycareClick.bind(this)}
                     handleWalkingClick={this.props.handleWalkingClick.bind(this)}
                     stayType = {this.props.stayType}
+                    startDate = {this.props.startDate}
+                    endDate = {this.props.endDate}
+                    focusedInput = {this.props.focusedInput}
+                    handleOnDatesChange = {this.props.handleOnDatesChange.bind(this)}
+                    handleOnFocusChange = {this.props.handleOnFocusChange.bind(this)}
                     />
                 </div>
                 <div className='search-page-results-wrap'>

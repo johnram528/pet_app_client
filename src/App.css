@@ -1,4 +1,4 @@
- .App {
+.App {
     text-align: center;
     font-family: Quicksand;
   }
@@ -147,14 +147,15 @@
     }
   }
 
-  .geosuggest {
+.geosuggest {
     font-size: 14px;
-    /*font-size: 1rem;*/
+    /* font-size: 1rem; */
     position: relative;
-    width: 100%%;
     margin: 1em auto;
     text-align: left;
-  }
+    width: 316px;
+    margin-left: -2px;
+}
   .geosuggest__input {
     width: 100%;
     border: 2px solid transparent;
@@ -359,4 +360,11 @@ em {
     justify-content: space-around;
     position: relative;
 }
+
+.dates-content {
+  margin-left: 3px;
+}
+
+
+
 

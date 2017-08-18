@@ -40,10 +40,32 @@ export default class SearchPageForm extends Component {
             <div className='dates-location-wrap col-xs-12 col-lg-12'> 
               
                 <div className='search-page-location col-lg-5 col-sm-12'>
-                  Location
+                  <Geosuggest
+                    ref={el=>this._geoSuggest=el}
+                    placeholder="Dirección o Ubicación"
+                    initialValue=""
+                    country="do"
+                    onSuggestSelect={location => this.setState({ location: location.location })}
+                    location={new google.maps.LatLng(18.4596542, -69.95741729999997)}
+                    highlightMatch={true}
+                    radius="20" />
                 </div>
                 <div className='search-page-dates col-lg-5 col-sm-12'>
-                  Dates
+                  <DateRangePicker
+                          startDate={this.props.startDate} // momentPropTypes.momentObj or null,
+                          endDate={this.props.endDate}// momentPropTypes.momentObj or null,
+                          onDatesChange={({ startDate, endDate }) => this.props.handleOnDatesChange(startDate, endDate )} // PropTypes.func.isRequired,
+                          focusedInput={this.props.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
+                          onFocusChange={focusedInput => this.props.handleOnFocusChange(focusedInput)} // PropTypes.func.isRequired,
+                          startDatePlaceholderText='Desde'
+                          endDatePlaceholderText='Hasta'
+                          showDefaultInputIcon={true}
+                          required={true}
+                          readOnly={true}
+                          anchorDirection='right'
+                          daySize={35}
+                          hideKeyboardShortcutsPanel={true}
+                        />
                 </div>
              
             </div>

@@ -1,62 +1,95 @@
-.search-button-wrap {
-  /*background-color: grey;*/
-}
+  .search-button-wrap {
+    /*background-color: grey;*/
+  }
 
-.search-page-buttons-row {
-  height: 42px;
-}
+  .search-page-buttons-row {
+    height: 42px;
+  }
 
-.stay-button {
-/*  background-color: yellow;*/
-  height: 100%;
-  border: 1px solid #ddd;
-  opacity: .6
-}
-
-.stay-button-active {
-  /*background-color: yellow;*/
-  height: 100%;
-  border-top: 3px solid #80e8e0;
-}
-
-.dates-location-wrap {
-  margin-top: 15px;
-  height: 34px
-  ;
-}
-
-.dates-location-inputs-row {
-
-  ;
-}
-
-.search-page-dates {
-    background-color: red;
+  .stay-button {
+  /*  background-color: yellow;*/
     height: 100%;
-    float: right;
-    margin-right: 40px;
-}
+    border: 1px solid #ddd;
+    opacity: .6;
+  }
 
-.search-page-location {
-    background-color: orange;
+  .stay-button-active {
+    /*background-color: yellow;*/
     height: 100%;
-    margin-left: 40px;
-}
+    border-top: 3px solid #80e8e0;
+  }
 
-.search-bottom-filters {
-  height: 40px;
-  margin-top: 15px
-}
-.pet-size-buttons {
-    background-color: yellow;
+  .dates-location-wrap {
+    margin-top: 15px;
+    height: 34px
+    ;
+  }
+
+  .dates-location-inputs-row {
+
+    ;
+  }
+
+  .search-page-dates {
+      background-color: red;
+      height: 100%;
+      margin-left: 45px;
+  }
+
+  .search-page-location {
+      background-color: orange;
+      height: 100%;
+      margin-left: 40px;
+  }
+
+  .search-bottom-filters {
+    height: 40px;
+    margin-top: 15px
+  }
+  
+  .pet-size-buttons {
+      height: 100%;
+      margin-left: 40px;
+      border: 1px solid #ddd;
+  }
+
+  .pet-qty-buttons {
+  
     height: 100%;
-    margin-left: 40px;
+    margin-left: 45px;
+    border: 1px solid #ddd;
 }
 
-.pet-qty-buttons {
-    background-color: blue;
-    height: 100%;
-    float: right;
-    margin-right: 40px;
+  .DateRangePicker {
+    position: relative;
+    display: inline-block;
+    width: 318px;
+    margin-left: -16px;
+}
+.dates-content > .DateRangePicker {
+    margin-left: -10px;
+}
+.DateRangePickerInput > .DateInput {
+    font-weight: normal;
+    font-size: inherit;
+    line-height: normal;
+    color: #757575;
+    margin: 0;
+    padding: 6px;
+    background: #fff;
+    position: relative;
+    display: inline-block;
+    width: 121px;
+    vertical-align: middle;
+    margin-left: 0px;
+}
 
+.search-page-location > .geosuggest {
+    font-size: 14px;
+    /* font-size: 1rem; */
+    position: relative;
+    margin-top: 0;
+    text-align: left;
+    width: 316px;
+    margin-left: -15px;
 }

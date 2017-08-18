@@ -27,7 +27,7 @@ class HomePage extends Component {
     }
   }
   handleOnSearchClick() {
-    this.state.location.length != 0 ? this.props.history.push('/search', { lat: this.state.location.lat, lng: this.state.location.lng }) :
+    this.state.location.length != 0 ? this.props.history.push('/search', { lat: this.state.location.lat, lng: this.state.location.lng, }) :
       this.props.history.push('/search', { lat: 18.4596542, lng: -69.95741729999997 })
   }
 
