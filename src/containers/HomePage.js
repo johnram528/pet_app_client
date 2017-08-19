@@ -91,8 +91,8 @@ class HomePage extends Component {
 
                     </div>
                     <div className='row search-form-row'>
-                        <div className='search-form-submit col-xs-4 col-lg-4' data-tip='Buscar Cuidadores'>
-                            <i className="fa fa-paw fa-2x  " aria-hidden="true" onClick={()=> this.handleOnSearchClick()}></i>
+                      <div className='search-form-submit col-xs-4 col-lg-4' data-tip='Buscar Cuidadores'>
+                          <i className="fa fa-paw fa-2x  " aria-hidden="true" onClick={()=> this.handleOnSearchClick()}></i>
                         <ReactTooltip place="bottom" type="light" effect="solid"/>
                       </div>
                     </div>

@@ -9,8 +9,10 @@ import SearchResults from '../components/SearchResults.js'
 class SearchPage extends Component {
   constructor(props) {
     super(props)
+ 
+      const location = this.props.location.state != undefined ? this.props.location.state.location : [18.4596542, -69.9312117];
       this.state = {
-        location: this.props.location.state.location,
+        location: location,
         activeId: null,
         stayType: 'Alojamiento',
         startDate: '',
@@ -67,6 +69,7 @@ class SearchPage extends Component {
         {picture: 'https://roneindyhiphop.files.wordpress.com/2017/02/148777547253231-e1487775574321.jpeg?quality=100&strip=all&w=1024', name: 'test2', badges: null, header: 'La segunda casa de tu mascota', location: 'Santo Domingo', rating:4.8, rate: 300, frequency: 'noche', service_list: 'Alojamiento, Diurna, Paseo', bio: 'Buen día, Hablar del amor que les tengo a los perros, sería hablar de toda mi vida, En mi casa nunca me permitieron tener mascotas porque no les..', center: [18.4697098, -69.9391392]},
         {picture: 'https://roneindyhiphop.files.wordpress.com/2017/02/148777547253231-e1487775574321.jpeg?quality=100&strip=all&w=1024', name: 'test3', badges: null, header: 'La segunda casa de tu mascota', location: 'Santo Domingo', rating:4.8, rate: 300, frequency: 'noche', service_list: 'Alojamiento, Diurna, Paseo', bio: 'Buen día, Hablar del amor que les tengo a los perros, sería hablar de toda mi vida, En mi casa nunca me permitieron tener mascotas porque no les..', center: [18.4534115, -69.94182009999997]}]}
         console.log(this.state.location)
+    const locationLabel = this.props.location.state != undefined ? this.props.location.state.locationLabel : "";
     return (
         <div className='search-page-wrap'>
           <section className='search-page-header'>
@@ -89,7 +92,7 @@ class SearchPage extends Component {
                   handleOnFocusChange = {this.handleOnFocusChange.bind(this)}
                   location = { this.state.location }
                   handleOnSuggestionSelect = {this.handleOnSuggestionSelect.bind(this)}
-                  locationLabel = {this.props.location.state.locationLabel}
+                  locationLabel = {locationLabel}
                   />
      
           </section>
