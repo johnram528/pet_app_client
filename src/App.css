@@ -10,7 +10,7 @@
 
   .bottom-content-container {
     height: 100vh;
-    margin: -20px;
+    margin-top: -20px;
     background-color:grey;
   }
 
@@ -20,7 +20,7 @@
 
   .footer-content-container {
     height: 50vh;
-    margin: -20px;
+    margin-top: -20px;
     background-color: yellow
   }
 
