@@ -17,7 +17,7 @@ export default (props) => {
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav>
-            <NavItem eventKey={1} href="#">Buscar Cuidadores</NavItem>
+            <NavItem eventKey={1} href="/search">Buscar Cuidadores</NavItem>
             <NavItem eventKey={2} href="#">Hazte Cuidador</NavItem>
           </Nav>
           <Nav pullRight>
