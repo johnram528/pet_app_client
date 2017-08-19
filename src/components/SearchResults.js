@@ -107,7 +107,7 @@ export default class SearchResult extends Component {
                 options={{
                   scrollwheel: false,
                   clickableIcons: false,
-
+                  fullscreenControl: false,
 
                 }}
                 ref='map'>
