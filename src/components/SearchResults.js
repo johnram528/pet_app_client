@@ -87,6 +87,9 @@ export default class SearchResult extends Component {
                     focusedInput = {this.props.focusedInput}
                     handleOnDatesChange = {this.props.handleOnDatesChange.bind(this)}
                     handleOnFocusChange = {this.props.handleOnFocusChange.bind(this)}
+                    handleOnSuggestionSelect = {this.props.handleOnSuggestionSelect.bind(this)}
+                    location = { this.props.location }
+                    locationLabel = {this.props.locationLabel}
                     />
                 </div>
                 <div className='search-page-results-wrap'>

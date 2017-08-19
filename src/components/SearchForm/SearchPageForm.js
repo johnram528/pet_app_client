@@ -43,9 +43,9 @@ export default class SearchPageForm extends Component {
                   <Geosuggest
                     ref={el=>this._geoSuggest=el}
                     placeholder="Dirección o Ubicación"
-                    initialValue=""
+                    initialValue={this.props.locationLabel}
                     country="do"
-                    onSuggestSelect={location => this.setState({ location: location.location })}
+                    onSuggestSelect={location => this.props.handleOnSuggestionSelect( location.location )}
                     location={new google.maps.LatLng(18.4596542, -69.95741729999997)}
                     highlightMatch={true}
                     radius="20" />

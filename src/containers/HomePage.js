@@ -23,12 +23,21 @@ class HomePage extends Component {
       startDate: '',
       endDate: '',
       focusedInput: '',
-      location: []
+      location: [], 
+      locationLabel: '',
     }
   }
   handleOnSearchClick() {
-    this.state.location.length != 0 ? this.props.history.push('/search', { lat: this.state.location.lat, lng: this.state.location.lng, }) :
-      this.props.history.push('/search', { lat: 18.4596542, lng: -69.95741729999997 })
+    this.state.location.length != 0 ? this.props.history.push('/search', { location: this.state.location, locationLabel: this.state.locationLabel}) :
+      this.props.history.push('/search')
+  }
+
+  handleOnSuggestionSelect(location) {
+    this.setState({
+      location: [location.location.lat, location.location.lng],
+      locationLabel: location.label,
+    })
+
   }
 
   render() {
@@ -74,7 +83,7 @@ class HomePage extends Component {
                           placeholder="Dirección o Ubicación"
                           initialValue=""
                           country="do"
-                          onSuggestSelect={location => this.setState({ location: location.location })}
+                          onSuggestSelect={location => this.handleOnSuggestionSelect(location)}
                           location={new google.maps.LatLng(18.4596542, -69.95741729999997)}
                           highlightMatch={true}
                           radius="20" />
