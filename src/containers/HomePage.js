@@ -8,6 +8,7 @@ import Footer from '../components/Footer'
 
 import { DateRangePicker} from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
+import moment from 'moment'
 import 'moment/locale/es.js';
 import Geosuggest from 'react-geosuggest';
 import StayTypeButtons from '../components/SearchForm/StayTypeButtons'
@@ -25,14 +26,16 @@ class HomePage extends Component {
       focusedInput: '',
       location: [], 
       locationLabel: '',
+      stayType: ''
     }
   }
   handleOnSearchClick() {
-    this.state.location.length != 0 ? this.props.history.push('/search', { location: this.state.location, locationLabel: this.state.locationLabel}) :
+    this.state.location.length != 0 ? this.props.history.push('/search', { location: this.state.location, locationLabel: this.state.locationLabel, startDate: this.state.startDate, endDate: this.state.endDate}) :
       this.props.history.push('/search')
   }
 
   handleOnSuggestionSelect(location) {
+    debugger
     this.setState({
       location: [location.location.lat, location.location.lng],
       locationLabel: location.label,
@@ -41,7 +44,8 @@ class HomePage extends Component {
   }
 
   render() {
-    console.log(this.state.location)
+    const DaySelect = (<div>Test</div>)
+    console.log([this.state.startDate, this.state.endDate])
     return (
         <div className='main-content-wrap'>
           <NavBar/>
@@ -58,6 +62,7 @@ class HomePage extends Component {
                     </div>
                     <div className='row'>
                       <div className='col-xs-12 col-lg-12 dates-content'> 
+                        {this.state.stayType != 'Alojamiento' ? DaySelect : 
                         <DateRangePicker
                           startDate={this.state.startDate} // momentPropTypes.momentObj or null,
                           endDate={this.state.endDate}// momentPropTypes.momentObj or null,
@@ -73,6 +78,7 @@ class HomePage extends Component {
                           daySize={35}
                           hideKeyboardShortcutsPanel={true}
                         />
+                      }
                       </div>
                     </div>
 

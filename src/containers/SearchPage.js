@@ -9,14 +9,15 @@ import SearchResults from '../components/SearchResults.js'
 class SearchPage extends Component {
   constructor(props) {
     super(props)
- 
       const location = this.props.location.state != undefined ? this.props.location.state.location : [18.4596542, -69.9312117];
+      const startDate = this.props.location.state != undefined ? this.props.location.state.startDate : null
+      const endDate = this.props.location.state != undefined ? this.props.location.state.endDate : null
       this.state = {
         location: location,
         activeId: null,
         stayType: 'Alojamiento',
-        startDate: '',
-        endDate: '',
+        startDate: startDate,
+        endDate: endDate,
 
       }
     }

@@ -22,6 +22,8 @@ export default class SearchPageForm extends Component {
     const stayButtonStyle = {
       backgroundColor:'yellow',
     }
+
+    const DaySelect = (<div>Test</div>)
     return (
           <div>
             <div className='search-button-wrap col-lg-12 col-xs-12'>
@@ -51,7 +53,9 @@ export default class SearchPageForm extends Component {
                     radius="20" />
                 </div>
                 <div className='search-page-dates col-lg-5 col-sm-12'>
-                  <DateRangePicker
+                  {this.props.stayType != 'Alojamiento' ? DaySelect : 
+
+                      <DateRangePicker
                           startDate={this.props.startDate} // momentPropTypes.momentObj or null,
                           endDate={this.props.endDate}// momentPropTypes.momentObj or null,
                           onDatesChange={({ startDate, endDate }) => this.props.handleOnDatesChange(startDate, endDate )} // PropTypes.func.isRequired,
@@ -65,7 +69,8 @@ export default class SearchPageForm extends Component {
                           anchorDirection='right'
                           daySize={35}
                           hideKeyboardShortcutsPanel={true}
-                        />
+                        />}
+                
                 </div>
              
             </div>
