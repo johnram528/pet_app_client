@@ -70,7 +70,7 @@ export default class SearchResult extends Component {
     )
 
     const sittersMarkers = this.props.results.sitters.map ((sitter, i)=>
-      <SitterMarker lat={sitter.center[0]} lng={sitter.center[1]} text={`${i}.${sitter.name}`}/>)
+      <SitterMarker lat={sitter.center[0]} lng={sitter.center[1]} name={sitter.name}/>)
 
 
   return(
