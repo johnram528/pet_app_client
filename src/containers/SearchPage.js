@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import NavBar from '../NavBar.js'
 import Footer from '../components/Footer'
+import moment from 'moment'
 // import SimoMap from '../components/SimoMap' 
 import '../Search.css'
 import SearchResults from '../components/SearchResults.js'
@@ -10,20 +11,22 @@ class SearchPage extends Component {
   constructor(props) {
     super(props)
       const location = this.props.location.state != undefined ? this.props.location.state.location : [18.4596542, -69.9312117];
-      const startDate = this.props.location.state != undefined ? this.props.location.state.startDate : null
-      const endDate = this.props.location.state != undefined ? this.props.location.state.endDate : null
+      const startDate = this.props.location.state != undefined ? moment(this.props.location.state.startDate) : null
+      const endDate = this.props.location.state != undefined ? moment(this.props.location.state.endDate) : null
+      const stayType = this.props.location.state != undefined ? this.props.location.state.stayType : 'Alojamiento'
+      const days = this.props.location.state != undefined ? this.props.location.state.days : []
       this.state = {
         location: location,
         activeId: null,
-        stayType: 'Alojamiento',
+        stayType: stayType,
         startDate: startDate,
         endDate: endDate,
-        days: [],
+        days: days,
 
       }
     }
   componentDidMount() {
- 
+  
   }
 
   handleBoardingClick(e) {
