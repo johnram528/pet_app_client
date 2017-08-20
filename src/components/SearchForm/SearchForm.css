@@ -11,12 +11,27 @@
     height: 100%;
     border: 1px solid #ddd;
     opacity: .6;
+    list-style: none
   }
 
   .stay-button-active {
     /*background-color: yellow;*/
     height: 100%;
-    border-top: 3px solid #80e8e0;
+    border-top: 3px solid #00a699;
+    list-style: none
+  }
+
+  .stay-button:hover, .stay-button > label:hover {
+    cursor: pointer;
+  }
+
+  .buttons-tab > .stay-button > label, .buttons-tab > .stay-button-active > label {
+    color: white;
+    font-weight: 100;
+  }
+
+   .buttons-tab > .stay-button, .buttons-tab > .stay-button-active {
+    opacity: .85
   }
 
   .dates-location-wrap {
@@ -108,18 +123,27 @@
     width: 14.285714286%;
     height: 40px;
     padding-top: 10px;
-    border: 1px solid #ddd;
-    cursor: pointer
+    cursor: pointer;
+    border-left: 1px solid #ddd;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+
 }
 
 .active{
-  border-color: #80e8e0
+  border-top: 4px solid #00a699;
+  border-bottom: 4px solid #00a699;
 }
 
 .day-select-wrap {
-  width: 315.6px;
-  margin-left: -15px;
+    width: 315.6px;
+    margin-left: -15px;
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    height: 42px;
 }
+
 
 .day-label {
   cursor: pointer

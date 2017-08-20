@@ -27,25 +27,65 @@ class HomePage extends Component {
       focusedInput: '',
       location: [], 
       locationLabel: '',
-      stayType: 'Alojamiento'
+      stayType: 'Alojamiento',
+      days: []
     }
   }
   handleOnSearchClick() {
-    this.state.location.length != 0 ? this.props.history.push('/search', { location: this.state.location, locationLabel: this.state.locationLabel, startDate: this.state.startDate, endDate: this.state.endDate}) :
+    this.state.location.length != 0 ? this.props.history.push('/search', { location: this.state.location, locationLabel: this.state.locationLabel}) :
       this.props.history.push('/search')
   }
 
   handleOnSuggestionSelect(location) {
-    debugger
     this.setState({
       location: [location.location.lat, location.location.lng],
       locationLabel: location.label,
     })
+  }
 
+  handleBoardingClick(e) {
+    e.preventDefault()
+    this.setState({
+      stayType: 'Alojamiento'
+    })
+  }
+
+  handleDaycareClick(e) {
+    e.preventDefault()
+    this.setState({
+      stayType: 'Diurna'
+    })
+  }
+
+  handleWalkingClick(e) {
+    e.preventDefault()
+    this.setState({
+      stayType: 'Paseo'
+    })
+  }
+
+  handleWeekdaySelect(day) {
+    this.state.days.includes(day) ? this.handleWeekdayRemove(day) : this.handleWeekdayAdd(day)
+  }
+
+  handleWeekdayAdd(day) {
+    let days = this.state.days
+    days.push(day)
+    this.setState({
+      days: days.sort()
+    })
+  }
+
+  handleWeekdayRemove(day){
+    let days = this.state.days
+    let index = days.indexOf(day)
+    days.splice(index,1)
+    this.setState({
+      days: days
+    })
   }
 
   render() {
-    const DaySelect = (<div>Test</div>)
     console.log([this.state.startDate, this.state.endDate])
     return (
         <div className='main-content-wrap'>
@@ -58,27 +98,36 @@ class HomePage extends Component {
                   <form className='search-form'>
                     <div className='row'>
                       <div className='col-xs-12 col-lg-12'>
-                        <StayTypeButtons/>
+                        <StayTypeButtons
+                          handleWalkingClick = {this.handleWalkingClick.bind(this)}
+                          handleDaycareClick = {this.handleDaycareClick.bind(this)}
+                          handleBoardingClick = {this.handleBoardingClick.bind(this)}
+                          stayType ={this.state.stayType}
+                        />
                       </div>
                     </div>
                     <div className='row'>
                       <div className='col-xs-12 col-lg-12 dates-content'> 
-                        {this.state.stayType != 'Alojamiento' ? <DaySelect/> : 
+                        {this.state.stayType != 'Alojamiento' ? 
+                        <DaySelect
+                          days = {this.state.days}
+                          handleWeekdaySelect = {this.handleWeekdaySelect.bind(this)}
+                          /> : 
                         <DateRangePicker
-                            startDate={this.props.startDate} // momentPropTypes.momentObj or null,
-                            endDate={this.props.endDate}// momentPropTypes.momentObj or null,
-                            onDatesChange={({ startDate, endDate }) => this.props.handleOnDatesChange(startDate, endDate )} // PropTypes.func.isRequired,
-                            focusedInput={this.props.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
-                            onFocusChange={focusedInput => this.props.handleOnFocusChange(focusedInput)} // PropTypes.func.isRequired,
-                            startDatePlaceholderText='Desde'
-                            endDatePlaceholderText='Hasta'
-                            showDefaultInputIcon={true}
-                            required={true}
-                            readOnly={true}
-                            anchorDirection='right'
-                            daySize={35}
-                            hideKeyboardShortcutsPanel={true}
-                          />}
+                          startDate={this.state.startDate} // momentPropTypes.momentObj or null,
+                          endDate={this.state.endDate}// momentPropTypes.momentObj or null,
+                          onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })} // PropTypes.func.isRequired,
+                          focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
+                          onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
+                          startDatePlaceholderText='Desde'
+                          endDatePlaceholderText='Hasta'
+                          showDefaultInputIcon={true}
+                          required={true}
+                          readOnly={true}
+                          anchorDirection='left'
+                          daySize={35}
+                          hideKeyboardShortcutsPanel={true}
+                        />}
                       </div>
                     </div>
 

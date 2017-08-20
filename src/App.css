@@ -362,7 +362,11 @@ em {
 }
 
 .dates-content {
-  margin-left: 3px;
+  margin-left: 5px;
+}
+
+.dates-content > .day-select-wrap {
+  margin-left: -7px;
 }
 
 
