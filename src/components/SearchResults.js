@@ -90,6 +90,8 @@ export default class SearchResult extends Component {
                     handleOnSuggestionSelect = {this.props.handleOnSuggestionSelect.bind(this)}
                     location = { this.props.location }
                     locationLabel = {this.props.locationLabel}
+                    days = {this.props.days}
+                    handleWeekdaySelect = {this.props.handleWeekdaySelect.bind(this)}
                     />
                 </div>
                 <div className='search-page-results-wrap'>

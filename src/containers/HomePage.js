@@ -16,6 +16,7 @@ import StayTypeButtons from '../components/SearchForm/StayTypeButtons'
 import TopContent from '../components/TopContent'
 import { withRouter, Link } from 'react-router-dom'
 import ReactTooltip from 'react-tooltip'
+import DaySelect from '../components/DaySelect.js'
 
 class HomePage extends Component {
     constructor(props){
@@ -26,7 +27,7 @@ class HomePage extends Component {
       focusedInput: '',
       location: [], 
       locationLabel: '',
-      stayType: ''
+      stayType: 'Alojamiento'
     }
   }
   handleOnSearchClick() {
@@ -62,23 +63,22 @@ class HomePage extends Component {
                     </div>
                     <div className='row'>
                       <div className='col-xs-12 col-lg-12 dates-content'> 
-                        {this.state.stayType != 'Alojamiento' ? DaySelect : 
+                        {this.state.stayType != 'Alojamiento' ? <DaySelect/> : 
                         <DateRangePicker
-                          startDate={this.state.startDate} // momentPropTypes.momentObj or null,
-                          endDate={this.state.endDate}// momentPropTypes.momentObj or null,
-                          onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })} // PropTypes.func.isRequired,
-                          focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
-                          onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
-                          startDatePlaceholderText='Desde'
-                          endDatePlaceholderText='Hasta'
-                          showDefaultInputIcon={true}
-                          required={true}
-                          readOnly={true}
-                          anchorDirection='left'
-                          daySize={35}
-                          hideKeyboardShortcutsPanel={true}
-                        />
-                      }
+                            startDate={this.props.startDate} // momentPropTypes.momentObj or null,
+                            endDate={this.props.endDate}// momentPropTypes.momentObj or null,
+                            onDatesChange={({ startDate, endDate }) => this.props.handleOnDatesChange(startDate, endDate )} // PropTypes.func.isRequired,
+                            focusedInput={this.props.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
+                            onFocusChange={focusedInput => this.props.handleOnFocusChange(focusedInput)} // PropTypes.func.isRequired,
+                            startDatePlaceholderText='Desde'
+                            endDatePlaceholderText='Hasta'
+                            showDefaultInputIcon={true}
+                            required={true}
+                            readOnly={true}
+                            anchorDirection='right'
+                            daySize={35}
+                            hideKeyboardShortcutsPanel={true}
+                          />}
                       </div>
                     </div>
 

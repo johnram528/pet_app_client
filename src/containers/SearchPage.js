@@ -18,6 +18,7 @@ class SearchPage extends Component {
         stayType: 'Alojamiento',
         startDate: startDate,
         endDate: endDate,
+        days: [],
 
       }
     }
@@ -61,15 +62,34 @@ class SearchPage extends Component {
     this.setState({ location })
   }
 
+  handleWeekdaySelect(day) {
+    this.state.days.includes(day) ? this.handleWeekdayRemove(day) : this.handleWeekdayAdd(day)
+  }
+
+  handleWeekdayAdd(day) {
+    let days = this.state.days
+    days.push(day)
+    this.setState({
+      days: days
+    })
+  }
+
+  handleWeekdayRemove(day){
+    let days = this.state.days
+    days.splice(day,1)
+    this.setState({
+      days: days
+    })
+  }
+
   render() {
-    console.log(this.props.location.state)
-    // const center = [this.props.location.state.lat, this.props.location.state.lng] 
+    console.log(this.state.days)
+ 
     const results = {
       sitters: [
         {picture: 'https://roneindyhiphop.files.wordpress.com/2017/02/148777547253231-e1487775574321.jpeg?quality=100&strip=all&w=1024', name: 'test1', badges: null, header: 'La segunda casa de tu mascota', location: 'Santo Domingo', rating:4.8, rate: 300, frequency: 'noche', service_list: 'Alojamiento, Diurna, Paseo', bio: 'Buen día, Hablar del amor que les tengo a los perros, sería hablar de toda mi vida, En mi casa nunca me permitieron tener mascotas porque no les..', center: [18.4560947, -69.92432550000001]}, 
         {picture: 'https://roneindyhiphop.files.wordpress.com/2017/02/148777547253231-e1487775574321.jpeg?quality=100&strip=all&w=1024', name: 'test2', badges: null, header: 'La segunda casa de tu mascota', location: 'Santo Domingo', rating:4.8, rate: 300, frequency: 'noche', service_list: 'Alojamiento, Diurna, Paseo', bio: 'Buen día, Hablar del amor que les tengo a los perros, sería hablar de toda mi vida, En mi casa nunca me permitieron tener mascotas porque no les..', center: [18.4697098, -69.9391392]},
         {picture: 'https://roneindyhiphop.files.wordpress.com/2017/02/148777547253231-e1487775574321.jpeg?quality=100&strip=all&w=1024', name: 'test3', badges: null, header: 'La segunda casa de tu mascota', location: 'Santo Domingo', rating:4.8, rate: 300, frequency: 'noche', service_list: 'Alojamiento, Diurna, Paseo', bio: 'Buen día, Hablar del amor que les tengo a los perros, sería hablar de toda mi vida, En mi casa nunca me permitieron tener mascotas porque no les..', center: [18.4534115, -69.94182009999997]}]}
-        console.log(this.state.location)
     const locationLabel = this.props.location.state != undefined ? this.props.location.state.locationLabel : "";
     return (
         <div className='search-page-wrap'>
@@ -94,6 +114,8 @@ class SearchPage extends Component {
                   location = { this.state.location }
                   handleOnSuggestionSelect = {this.handleOnSuggestionSelect.bind(this)}
                   locationLabel = {locationLabel}
+                  days = {this.state.days}
+                  handleWeekdaySelect = {this.handleWeekdaySelect.bind(this)}
                   />
      
           </section>

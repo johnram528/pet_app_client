@@ -7,6 +7,7 @@ import Geosuggest from 'react-geosuggest';
 import StayTypeButtons from './StayTypeButtons'
 import ReactTooltip from 'react-tooltip'
 import './SearchForm.css'
+import DaySelect from '../DaySelect.js'
 
 export default class SearchPageForm extends Component {
   constructor(props) {
@@ -23,7 +24,6 @@ export default class SearchPageForm extends Component {
       backgroundColor:'yellow',
     }
 
-    const DaySelect = (<div>Test</div>)
     return (
           <div>
             <div className='search-button-wrap col-lg-12 col-xs-12'>
@@ -53,24 +53,25 @@ export default class SearchPageForm extends Component {
                     radius="20" />
                 </div>
                 <div className='search-page-dates col-lg-5 col-sm-12'>
-                  {this.props.stayType != 'Alojamiento' ? DaySelect : 
-
-                      <DateRangePicker
-                          startDate={this.props.startDate} // momentPropTypes.momentObj or null,
-                          endDate={this.props.endDate}// momentPropTypes.momentObj or null,
-                          onDatesChange={({ startDate, endDate }) => this.props.handleOnDatesChange(startDate, endDate )} // PropTypes.func.isRequired,
-                          focusedInput={this.props.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
-                          onFocusChange={focusedInput => this.props.handleOnFocusChange(focusedInput)} // PropTypes.func.isRequired,
-                          startDatePlaceholderText='Desde'
-                          endDatePlaceholderText='Hasta'
-                          showDefaultInputIcon={true}
-                          required={true}
-                          readOnly={true}
-                          anchorDirection='right'
-                          daySize={35}
-                          hideKeyboardShortcutsPanel={true}
-                        />}
-                
+                  {this.props.stayType != 'Alojamiento' ? 
+                    <DaySelect 
+                      days={this.props.days}
+                      handleWeekdaySelect = {this.props.handleWeekdaySelect.bind(this)}/> : 
+                    <DateRangePicker
+                        startDate={this.props.startDate} // momentPropTypes.momentObj or null,
+                        endDate={this.props.endDate}// momentPropTypes.momentObj or null,
+                        onDatesChange={({ startDate, endDate }) => this.props.handleOnDatesChange(startDate, endDate )} // PropTypes.func.isRequired,
+                        focusedInput={this.props.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
+                        onFocusChange={focusedInput => this.props.handleOnFocusChange(focusedInput)} // PropTypes.func.isRequired,
+                        startDatePlaceholderText='Desde'
+                        endDatePlaceholderText='Hasta'
+                        showDefaultInputIcon={true}
+                        required={true}
+                        readOnly={true}
+                        anchorDirection='right'
+                        daySize={35}
+                        hideKeyboardShortcutsPanel={true}
+                      />}
                 </div>
              
             </div>

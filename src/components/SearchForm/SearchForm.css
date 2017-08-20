@@ -20,8 +20,8 @@
   }
 
   .dates-location-wrap {
-    margin-top: 15px;
-    height: 34px
+    margin-top: 10px;
+    height: 40px;
     ;
   }
 
@@ -92,4 +92,36 @@
     text-align: left;
     width: 316px;
     margin-left: -15px;
+}
+
+.dayPicker {
+  overflow: hidden;
+  margin-bottom: 8px;
+  padding: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #ddd;
+  border-left: none
+}
+
+.weekday {
+    display: inline-block;
+    float: left;
+    width: 14.285714286%;
+    height: 40px;
+    padding-top: 10px;
+    border-left: 1px solid #ddd;
+    cursor: pointer
+}
+
+.weekday{
+  ;
+}
+.day-select-wrap {
+  width: 315.6px;
+  margin-left: -15px;
+}
+
+.day-label {
+  cursor: pointer
 }
