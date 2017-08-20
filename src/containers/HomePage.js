@@ -25,15 +25,16 @@ class HomePage extends Component {
       startDate: '',
       endDate: '',
       focusedInput: '',
-      location: [], 
+      location: [18.4596542, -69.9312117], 
       locationLabel: '',
       stayType: 'Alojamiento',
       days: []
     }
   }
   handleOnSearchClick() {
-    this.state.location.length != 0 ? this.props.history.push('/search', { location: this.state.location, locationLabel: this.state.locationLabel, stayType: this.state.stayType, days: this.state.days, startDate: this.state.startDate.toObject(), endDate: this.state.endDate.toObject()}) :
-      this.props.history.push('/search')
+    const startDate = this.state.startDate != '' ? this.state.startDate.toObject() : this.state.startDate
+    const endDate = this.state.endDate != '' ? this.state.endDate.toObject() : this.state.endDate
+    this.props.history.push('/search', { location: this.state.location, locationLabel: this.state.locationLabel, stayType: this.state.stayType, days: this.state.days, startDate: startDate, endDate: endDate})
   }
 
   handleOnSuggestionSelect(location) {

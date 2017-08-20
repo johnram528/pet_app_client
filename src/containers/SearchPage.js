@@ -11,8 +11,8 @@ class SearchPage extends Component {
   constructor(props) {
     super(props)
       const location = this.props.location.state != undefined ? this.props.location.state.location : [18.4596542, -69.9312117];
-      const startDate = this.props.location.state != undefined ? moment(this.props.location.state.startDate) : null
-      const endDate = this.props.location.state != undefined ? moment(this.props.location.state.endDate) : null
+      const startDate = this.props.location.state != undefined && this.props.location.state.startDate != '' ? moment(this.props.location.state.startDate) : null
+      const endDate = this.props.location.state != undefined && this.props.location.state.startDate != '' ? moment(this.props.location.state.endDate) : null
       const stayType = this.props.location.state != undefined ? this.props.location.state.stayType : 'Alojamiento'
       const days = this.props.location.state != undefined ? this.props.location.state.days : []
       this.state = {
