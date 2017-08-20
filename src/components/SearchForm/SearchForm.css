@@ -131,8 +131,8 @@
 }
 
 .active{
-  border-top: 4px solid #00a699;
-  border-bottom: 4px solid #00a699;
+  border-top: 3px solid #00a699;
+  border-bottom: 3px solid #00a699;
 }
 
 .day-select-wrap {
