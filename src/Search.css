@@ -30,6 +30,7 @@
   margin-top: 20px;
   background-color: white;
   margin-bottom: 40px;
+  border-radius: 3px;
  
 }
 
@@ -70,6 +71,7 @@
     list-style: none;
     margin-right: -20px;
     background-color: white;
+    border-radius: 3px;
 }
 
 .search-sitter-card:hover {

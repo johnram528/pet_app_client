@@ -1,5 +1,5 @@
   .search-button-wrap {
-    /*background-color: grey;*/
+
   }
 
   .search-page-buttons-row {
@@ -7,18 +7,19 @@
   }
 
   .stay-button {
-  /*  background-color: yellow;*/
     height: 100%;
     border: 1px solid #ddd;
     opacity: .6;
-    list-style: none
+    list-style: none;
+    border-radius: 3px;
   }
 
   .stay-button-active {
-    /*background-color: yellow;*/
     height: 100%;
     border-top: 3px solid #00a699;
-    list-style: none
+    list-style: none;
+    border-radius: 3px;
+    border-radius: 3px;
   }
 
   .stay-button:hover, .stay-button > label:hover {
