@@ -8,7 +8,7 @@ export default class DaySelect extends Component {
 
   handleWeekDaySelect(e) {
     let parent = e.target
-    while (parent && parent.classList.value != 'weekday') {
+    while (parent && !parent.classList.value.includes('weekday') ) {
       parent = parent.parentElement
     }
     let day = parseInt(parent.childNodes[0].childNodes[1].value)
@@ -23,45 +23,45 @@ export default class DaySelect extends Component {
     return (
       <div className='day-select-wrap'>
         <ol className='dayPicker'>
-          <li className='weekday' onClick={(e)=>this.handleWeekDaySelect(e)}>
+          <li className={this.props.days.includes(0) ? 'weekday active' : 'weekday'} onClick={(e)=>this.handleWeekDaySelect(e)}>
             <label>
-              <span className='day-label' data-key='0'>Do</span>
+              <span className='day-label' onClick={(e)=>this.handleWeekDaySelect(e)}>Do</span>
               <input hidden name='weekday[]' type='checkbox' value='0'/>
             </label>
           </li>
-          <li className='weekday'>
+          <li className={this.props.days.includes(1) ? 'weekday active' : 'weekday'} onClick={(e)=>this.handleWeekDaySelect(e)}>
             <label>
-              <span className='day-label' data-key='1'>Lu</span>
+              <span className='day-label' onClick={(e)=>this.handleWeekDaySelect(e)}>Lu</span>
               <input hidden name='weekday[]' type='checkbox' value='1'/>
             </label>
           </li>
-          <li className='weekday'>
+          <li className={this.props.days.includes(2) ? 'weekday active' : 'weekday'} onClick={(e)=>this.handleWeekDaySelect(e)}>
             <label>
-              <span className='day-label' data-key='2'>Ma</span>
+              <span className='day-label' onClick={(e)=>this.handleWeekDaySelect(e)}>Ma</span>
               <input hidden name='weekday[]' type='checkbox' value='2'/>
             </label>
           </li>
-          <li className='weekday'>
+          <li className={this.props.days.includes(3) ? 'weekday active' : 'weekday'} onClick={(e)=>this.handleWeekDaySelect(e)}>
             <label>
-              <span className='day-label' data-key='3'>Mi</span>
+              <span className='day-label' onClick={(e)=>this.handleWeekDaySelect(e)}>Mi</span>
               <input hidden name='weekday[]' type='checkbox' value='3'/>
             </label>
           </li>
-          <li className='weekday'>
+          <li className={this.props.days.includes(4) ? 'weekday active' : 'weekday'} onClick={(e)=>this.handleWeekDaySelect(e)}>
             <label>
-              <span className='day-label' data-key='4'>Ju</span>
+              <span className='day-label' onClick={(e)=>this.handleWeekDaySelect(e)}>Ju</span>
               <input hidden name='weekday[]' type='checkbox' value='4'/>
             </label>
           </li>
-          <li className='weekday' data-key='5'>
+          <li className={this.props.days.includes(5) ? 'weekday active' : 'weekday'} onClick={(e)=>this.handleWeekDaySelect(e)}>
             <label>
-              <span className='day-label'>Vi</span>
+              <span className='day-label' onClick={(e)=>this.handleWeekDaySelect(e)}>Vi</span>
               <input hidden name='weekday[]' type='checkbox' value='5'/>
             </label>
           </li>
-          <li className='weekday' data-key='6'>
+          <li className={this.props.days.includes(6) ? 'weekday active' : 'weekday'} onClick={(e)=>this.handleWeekDaySelect(e)}>
             <label>
-              <span className='day-label'>Sa</span>
+              <span className='day-label' onClick={(e)=>this.handleWeekDaySelect(e)}>Sa</span>
               <input hidden name='weekday[]' type='checkbox' value='6'/>
             </label>
           </li>

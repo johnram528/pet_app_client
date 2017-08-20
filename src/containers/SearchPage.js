@@ -70,13 +70,14 @@ class SearchPage extends Component {
     let days = this.state.days
     days.push(day)
     this.setState({
-      days: days
+      days: days.sort()
     })
   }
 
   handleWeekdayRemove(day){
     let days = this.state.days
-    days.splice(day,1)
+    let index = days.indexOf(day)
+    days.splice(index,1)
     this.setState({
       days: days
     })

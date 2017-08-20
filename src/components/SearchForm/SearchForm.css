@@ -100,8 +100,6 @@
   padding: 0;
   width: 100%;
   background: white;
-  border: 1px solid #ddd;
-  border-left: none
 }
 
 .weekday {
@@ -110,13 +108,14 @@
     width: 14.285714286%;
     height: 40px;
     padding-top: 10px;
-    border-left: 1px solid #ddd;
+    border: 1px solid #ddd;
     cursor: pointer
 }
 
-.weekday{
-  ;
+.active{
+  border-color: #80e8e0
 }
+
 .day-select-wrap {
   width: 315.6px;
   margin-left: -15px;
