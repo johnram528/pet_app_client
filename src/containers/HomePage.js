@@ -32,8 +32,6 @@ class HomePage extends Component {
     }
   }
   handleOnSearchClick() {
-    const mom = moment('Wed Aug 23 2017 12:00:00 GMT-0400 (EDT)')
-    debugger
     this.state.location.length != 0 ? this.props.history.push('/search', { location: this.state.location, locationLabel: this.state.locationLabel, stayType: this.state.stayType, days: this.state.days, startDate: this.state.startDate.toObject(), endDate: this.state.endDate.toObject()}) :
       this.props.history.push('/search')
   }
