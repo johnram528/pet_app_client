@@ -5,6 +5,7 @@
   "proxy": "http://localhost:3001",
   "dependencies": {
     "google-map-react": "^0.24.0",
+    "history": "^4.6.3",
     "moment": "^2.18.1",
     "react": "^15.6.1",
     "react-addons-shallow-compare": "^15.6.0",
