@@ -1,9 +1,10 @@
   .search-button-wrap {
-
+    height: 42px;
   }
 
-  .search-page-buttons-row {
-    height: 42px;
+  .search-page-buttons {
+    height: 100%;
+    margin-bottom: 10px;
   }
 
   .stay-button {
@@ -48,12 +49,12 @@
 
   .search-page-dates {
       height: 100%;
-      margin-left: 45px;
+/*      margin-left: 45px;*/
   }
 
   .search-page-location {
       height: 100%;
-      margin-left: 40px;
+/*      margin-left: 40px;*/
   }
 
   .search-bottom-filters {
@@ -63,25 +64,24 @@
   
   .pet-size-buttons {
       height: 100%;
-      margin-left: 40px;
+/*      margin-left: 40px;*/
       border: 1px solid #ddd;
   }
 
   .pet-qty-buttons {
   
     height: 100%;
-    margin-left: 45px;
+  /*  margin-left: 45px;*/
     border: 1px solid #ddd;
 }
 
   .DateRangePicker {
     position: relative;
-    display: inline-block;
-    width: 318px;
-    margin-left: -16px;
+    width: 100%;
 }
 .dates-content > .DateRangePicker {
-    margin-left: -10px;
+  /*  margin-left: -10px;*/
+  width: 100%
 }
 .DateRangePickerInput > .DateInput {
     font-weight: normal;
@@ -93,9 +93,13 @@
     background: #fff;
     position: relative;
     display: inline-block;
-    width: 121px;
+    width: 40%;
     vertical-align: middle;
     margin-left: 0px;
+}
+
+.DateRangePickerInput{
+  width: 100%;
 }
 
 .search-page-location > .geosuggest {
@@ -104,21 +108,20 @@
     position: relative;
     margin-top: 0;
     text-align: left;
-    width: 316px;
-    margin-left: -15px;
+
 }
 
 .dayPicker {
   overflow: hidden;
   margin-bottom: 8px;
   padding: 0;
-  width: 100%;
+
   background: white;
 }
 
 .weekday {
     display: inline-block;
-    float: left;
+
     width: 14.285714286%;
     height: 40px;
     padding-top: 10px;
@@ -135,15 +138,17 @@
 }
 
 .day-select-wrap {
-    width: 315.6px;
-    margin-left: -15px;
     border-top: 1px solid #ddd;
     border-right: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
-    height: 42px;
+    height: 43px;
 }
 
 
 .day-label {
   cursor: pointer
+}
+
+.DateRangePickerInput__calendar-icon {
+  width: 8%
 }

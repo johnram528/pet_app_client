@@ -74,9 +74,9 @@ export default class SearchResult extends Component {
 
 
   return(
-             <div className='search-page-content-wrap'>
-              <div  className='search-left-wrap'>
-                <div  className='search-page-form-wrap'>
+             <div className='search-page-content-wrap row justify-content-center'>
+              <div  className='search-left-wrap col-sm-7 col-xs-12'>
+                
                   <SearchPageForm
                     handleBoardingClick={this.props.handleBoardingClick.bind(this)}
                     handleDaycareClick={this.props.handleDaycareClick.bind(this)}
@@ -93,14 +93,14 @@ export default class SearchResult extends Component {
                     days = {this.props.days}
                     handleWeekdaySelect = {this.props.handleWeekdaySelect.bind(this)}
                     />
-                </div>
+                
                 <div className='search-page-results-wrap'>
                   <div className='search-results'>
                     {cards}
                   </div>
                 </div>
               </div>
-              <div  className='map-wrap'>
+              <div  className='map-wrap col-sm-4 hidden-xs'>
                 <GoogleMap
          // apiKey={'AIzaSyBGHYuzgpfOXiomCVvN8d9rZW2zNeiLd-Y'}
           

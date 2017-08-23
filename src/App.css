@@ -35,7 +35,7 @@
   .search-container {
     display: inline-block;
     margin-top: 100px;
-    max-width: 385px;
+    width: 400px;
 
   }
 
@@ -153,7 +153,7 @@
     position: relative;
     margin: 1em auto;
     text-align: left;
-    width: 316px;
+  /**/
     margin-left: -2px;
 }
   .geosuggest__input {
@@ -362,12 +362,12 @@ em {
 }
 
 .dates-content {
-  margin-left: 5px;
+
 }
 
 .dates-content > .day-select-wrap {
-  margin-left: -7px;
-}
+    height: 42px;
+  }
 
 
 

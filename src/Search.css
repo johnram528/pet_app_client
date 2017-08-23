@@ -1,5 +1,5 @@
 .map-wrap {
-  width: 500px;
+ /* width: 500px;*/
   height: 650px;
 }
 
@@ -26,12 +26,18 @@
 
 .search-page-form-wrap {
   border: solid 1px #ddd;
-  height: 160px;
+  height: 178px;
   margin-top: 20px;
   background-color: white;
   margin-bottom: 40px;
   border-radius: 3px;
  
+}
+
+@media (max-width: 990px) {
+  .search-page-form-wrap {
+    height: 260px;
+  }
 }
 
 .search-page-results-wrap {
@@ -44,7 +50,6 @@
   margin-top: 20px;
   position: relative;
   right: 5%;
-  width: 35%;
   float: right;
   height: 87.4vh;
 }
@@ -53,9 +58,15 @@
   height: 90vh;
   overflow-y: scroll;
   position: relative;
-  width: 55%;
   float: left;
-  left: 5%;
+  left: 5%
+}
+
+@media (max-width: 767px) {
+  .search-left-wrap {
+    left: 0%;
+
+  }
 }
 
 .search-results {

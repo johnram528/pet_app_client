@@ -100,7 +100,7 @@ class SearchPage extends Component {
           <section className='search-page-header'>
             <NavBar/>
           </section>
-          <section className='search-page-content'>
+          <section className='search-page-content container-fluid'>
 
 
                   <SearchResults

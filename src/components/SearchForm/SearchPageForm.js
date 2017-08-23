@@ -25,23 +25,23 @@ export default class SearchPageForm extends Component {
     }
 
     return (
-          <div>
-            <div className='search-button-wrap col-lg-12 col-xs-12'>
-              <div className='search-page-buttons-row row'> 
-                <div className={this.props.stayType == "Alojamiento" ? 'stay-button-active col-lg-4 col-lg-4' : 'stay-button col-lg-4 col-lg-4'} onClick={(e)=> this.props.handleBoardingClick(e)}>
+          <div className='search-page-form-wrap container-fluid'>
+            <div className='search-button-wrap row'>
+              <div className='search-page-buttons col-xs-12'> 
+                <div className={this.props.stayType == "Alojamiento" ? 'stay-button-active col-xs-4' : 'stay-button col-xs-4 col-xs-4'} onClick={(e)=> this.props.handleBoardingClick(e)}>
                   Alojamiento
                 </div>
-                <div className={this.props.stayType == "Diurna" ? 'stay-button-active col-lg-4' : 'stay-button col-lg-4'} onClick={(e)=> this.props.handleDaycareClick(e)}>
+                <div className={this.props.stayType == "Diurna" ? 'stay-button-active col-xs-4' : 'stay-button col-xs-4'} onClick={(e)=> this.props.handleDaycareClick(e)}>
                   Diurna
                 </div>
-                <div className={this.props.stayType == "Paseo" ? 'stay-button-active col-lg-4' : 'stay-button col-lg-4'} onClick={(e)=> this.props.handleWalkingClick(e)}>
+                <div className={this.props.stayType == "Paseo" ? 'stay-button-active col-xs-4' : 'stay-button col-xs-4'} onClick={(e)=> this.props.handleWalkingClick(e)}>
                   Paseo
                 </div>
               </div>
             </div>
-            <div className='dates-location-wrap col-xs-12 col-lg-12'> 
-              
-                <div className='search-page-location col-lg-5 col-sm-12'>
+            <div className='dates-location-wrap row'> 
+              <div className='dates-location col-xs-12'> 
+                <div className='search-page-location col-md-6 col-xs-12'>
                   <Geosuggest
                     ref={el=>this._geoSuggest=el}
                     placeholder="Dirección o Ubicación"
@@ -52,7 +52,8 @@ export default class SearchPageForm extends Component {
                     highlightMatch={true}
                     radius="20" />
                 </div>
-                <div className='search-page-dates col-lg-5 col-sm-12'>
+
+                <div className='search-page-dates col-md-6 col-xs-12'>
                   {this.props.stayType != 'Alojamiento' ? 
                     <DaySelect 
                       days={this.props.days}
@@ -73,18 +74,19 @@ export default class SearchPageForm extends Component {
                         hideKeyboardShortcutsPanel={true}
                       />}
                 </div>
+              </div>
              
             </div>
-            <div className='search-bottom-filters col col-xs-12 col-lg-12'>
-                
-                <div className='pet-size-buttons col-lg-5'>
-                  Pet Size
-                </div>
-                <div className='pet-qty-buttons col-lg-5'>
-                  Pet Qty
-                </div>
-
-
+            <div className='row'>
+              <div className='search-bottom-filters col-xs-12'>
+                  
+                  <div className='pet-size-buttons col-md-6 col-xs-12'>
+                    Pet Size
+                  </div>
+                  <div className='pet-qty-buttons col-md-6 col-xs-12'>
+                    Pet Qty
+                  </div>
+              </div>
             </div>
           </div>
            
