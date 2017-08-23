@@ -35,12 +35,12 @@ export default class SearchResult extends Component {
     const cards = this.props.results.sitters.map ((sitter, i) =>
       <div className='search-sitter-card' ref={sitter.name} id={i} onClick={()=> this.handleClick()} >
       <div className='top-card-row'>
-        <div className='col-xs-3 col-sm-2 col-md-3 col-lg-2'>
+        <div className='col-xs-3 col-lg-2'>
           <div className='card-pic'>
             <img src={sitter.picture}/>
           </div>
         </div>
-        <div className='col-xs-6 col-sm-7 col-md-5 col-lg-6'>
+        <div className='col-xs-6 col-lg-7'>
           <div className='row'>
             <div className='col-xs-12'>
               <div className='card-name'><Link to='/'><strong>{sitter.name}</strong></Link></div>
@@ -51,7 +51,7 @@ export default class SearchResult extends Component {
           <div className='card-location'>{sitter.location}</div>
           <div className='card-review'>{sitter.rating}</div>
         </div>
-        <div className='col-xs-3 col-md-4 min-price-div'>
+        <div className='col-xs-3 min-price-div'>
           <div className='money-corner'>
             <span className='rate'>{'$' + sitter.rate}</span>
             <br className='hidden-sm hidden-md hidden-lg'/>
@@ -61,8 +61,8 @@ export default class SearchResult extends Component {
       </div>
       <div className='bottom-card-row'>
         <div className='col-xs-12'>
-          <div className='service-list hidden-xs'>{sitter.service_list}</div>
-          <div className='sitter-bio hidden-xs'>{sitter.bio}</div>
+          <div className='service-list col-xs-12'>{sitter.service_list}</div>
+          <div className='sitter-bio col-xs-12'>{sitter.bio}</div>
         </div>
         <div className='col-xs-12 data-row'></div>
       </div>
