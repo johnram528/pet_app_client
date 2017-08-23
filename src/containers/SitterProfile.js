@@ -6,6 +6,6 @@ export default class SitterProfile extends Component {
 
   }
   render() {
-    return (<div>Hello</div>)
+    return (<div>{this.props.match.params.sitterId}</div>)
   }
 }

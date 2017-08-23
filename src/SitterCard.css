@@ -75,3 +75,7 @@
   font-size: 13px;
 }
 
+a > .search-sitter-card {
+  color: black;
+}
+
