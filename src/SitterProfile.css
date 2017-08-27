@@ -1,3 +1,79 @@
 .sitter-profile-header {
   background-color: black
 }
+
+.sitter-main {
+  margin-top: -10px;
+  height: 94vh;
+}
+
+.sitter-photos {
+  background-color: white;
+  height: 100%;
+}
+
+.sitter-summary {
+  background-color: red;
+  height: 100%;
+}
+
+.sitter-services {
+  height: 50vh;
+}
+
+.sitter-info {
+  background-color: blue;
+  height: 100%
+}
+
+.sitter-calendar {
+  background-color: orange;
+  height: 100%
+}
+
+.sitter-about {
+  height: 50vh;
+}
+
+.sitter-profile-bio {
+  background-color: yellow;
+  height: 100%
+}
+
+.sitter-pref {
+  background-color: red;
+  height: 100%;
+}
+
+.sitter-feedback {
+  height: 100%
+}
+
+.sitter-reviews {
+  background-color: blue;
+  height: 600px;
+}
+
+.sitter-profile-map {
+  background-color: yellow;
+  height: 50vh;
+}
+
+.sitter-profile-footer {
+  background-color: green;
+  height: 50vh;
+}
+
+.slick-slide img{
+  width: 100%
+}
+
+.slick-slider > .slick-next {
+  right: 0;
+  z-index: 1;
+} 
+
+.slick-slider > .slick-prev {
+  left: 0;
+  z-index: 1
+}
