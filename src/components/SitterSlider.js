@@ -16,16 +16,18 @@ export default class SitterSlider extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       accessibility: true,
+      fade: true,
+      speed: 2000
     };
 
+    const sitterGallery = 
+      this.props.sitter.sitter_gallery.map((pic)=>
+        <div><img src={pic}></img></div>
+        )
+    
     return (
             <Slider {...settings}>
-              <div><img src='https://roneindyhiphop.files.wordpress.com/2017/02/148777547253231-e1487775574321.jpeg?quality=100&strip=all&w=1024'></img></div>
-              <div><h3>2</h3></div>
-              <div><h3>3</h3></div>
-              <div><h3>4</h3></div>
-              <div><h3>5</h3></div>
-              <div><h3>6</h3></div>
+              {sitterGallery}
             </Slider>
       )
   }
