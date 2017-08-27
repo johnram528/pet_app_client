@@ -34,7 +34,7 @@ export default class SearchResult extends Component {
 
     const cards = this.props.results.sitters.map ((sitter, i) =>
       <Link to='/sitters/1'>
-        <div className='search-sitter-card' ref={sitter.name} id={i} onClick={()=> this.handleClick()} >
+        <div className='search-sitter-card' ref={sitter.name} id={i} >
         <div className='top-card-row'>
           <div className='col-xs-3 col-lg-2'>
             <div className='card-pic'>

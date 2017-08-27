@@ -123,7 +123,7 @@ class SearchPage extends Component {
                   />
      
           </section>
-          <section className='search-page-footer' onClick={(e)=> this.handleBoardingClick(e)}>
+          <section className='search-page-footer'>
             <Footer />
           </section>
         </div>
