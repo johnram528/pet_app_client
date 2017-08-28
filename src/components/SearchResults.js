@@ -44,7 +44,7 @@ export default class SearchResult extends Component {
           <div className='col-xs-6 col-lg-7'>
             <div className='row'>
               <div className='col-xs-12'>
-                <div className='card-name'><Link to='/'><strong>{sitter.name}</strong></Link></div>
+                <div className='card-name'><Link to='/sitters/1'><strong>{sitter.name}</strong></Link></div>
                 <div className='card-badges'></div>
               </div>
             </div>

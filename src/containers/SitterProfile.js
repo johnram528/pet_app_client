@@ -3,6 +3,7 @@ import '../SitterProfile.css'
 import NavBar from '../NavBar.js'
 import Footer from '../components/Footer.js'
 import SitterSlider from '../components/SitterSlider.js'
+import SitterSummary from '../components/SitterSummary.js'
 
 export default class SitterProfile extends Component {
   constructor(props){
@@ -26,11 +27,13 @@ export default class SitterProfile extends Component {
                 <SitterSlider
                   sitter={sitter}/>
               </div>
-              <div className='sitter-summary col-xs-12 col-md-5'>SitterSummary</div>  
+              <div className='sitter-summary col-xs-12 col-md-5'><SitterSummary/></div>  
             </div>
             <div className='sitter-services row'>
               <div className='sitter-info col-xs-12 col-md-7'>SitterInfo</div>
-              <div className='sitter-calendar col-xs-12 col-md-5'>SitterCalendar</div>
+              <div className='sitter-calendar col-xs-12 col-md-5'>
+                SitterCalendar
+              </div>
             </div>
             <div className='sitter-about row'>
               <div className='sitter-profile-bio col-xs-12 col-md-7'>SitterBio</div>

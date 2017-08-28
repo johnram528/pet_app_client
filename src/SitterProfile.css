@@ -65,7 +65,8 @@
 }
 
 .slick-slide img{
-  width: 100%
+  width: 100%;
+  height: 600px;
 }
 
 .slick-slider > .slick-next {
