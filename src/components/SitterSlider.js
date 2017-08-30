@@ -21,7 +21,7 @@ export default class SitterSlider extends Component {
     };
 
     const sitterGallery = 
-      this.props.sitter.sitter_gallery.map((pic)=>
+      this.props.photos.map((pic)=>
         <div><img src={pic}></img></div>
         )
     
