@@ -7,12 +7,14 @@ export default class SitterSummary extends Component {
 
   }
   render() {
+    const favoriteActive = (<div className='favorite-btn-active col-xs-2' onClick={()=> this.props.handleOnFavClick()}><i className="fa fa-lg fa-heart" aria-hidden="true"></i></div>)
+    const favorite = (<div className='favorite-btn col-xs-2' onClick={()=> this.props.handleOnFavClick()}><i className="fa fa-lg fa-heart-o" aria-hidden="true"></i></div> )
     return (
       <div>
       <div className='provider-card row'>
         <div className='provider-card-pic col-xs-3'><img src={this.props.profile_pic}></img></div>
         <div className='provider-card-body col-xs-9'>
-          <div className='pcard-name col-xs-12'>{this.props.name}</div>
+          <div className='pcard-name col-xs-12'>{this.props.first_name+' '+this.props.last_name}</div>
           <div className='pcard-header col-xs-12'>{this.props.header}</div>
           <div className='pcard-location col-xs-12'>{this.props.city}</div>
           <div className='pcard-rating col-xs-12'>{this.props.rating}</div>
@@ -58,8 +60,8 @@ export default class SitterSummary extends Component {
       </div>
       <div className='contact-wrap row'>
         <div className='contact-favorite-wrap'>
-          <div className='contact-btn col-xs-8'>contact</div>
-          <div className='favorite-btn col-xs-2'>favorite</div>
+          <div className='contact-btn col-xs-8'>Contact {this.props.first_name}</div>
+          { this.props.favorited  ? favoriteActive : favorite }
         </div>
       </div>
       </div>

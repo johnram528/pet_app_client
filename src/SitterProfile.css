@@ -11,8 +11,8 @@
   background-color: white;
   border: 1px solid #ddd;
 /*  border-radius: 20px;*/
-  border-bottom-left-radius: 20px;
-  border-top-left-radius: 20px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
   height: 100%;
 }
 
@@ -20,8 +20,8 @@
   background-color: white;
   border: 1px solid #ddd;
 /*  border-radius: 20px;*/
-  border-bottom-right-radius: 20px;
-  border-top-right-radius: 20px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
   height: 100%;
 }
 
@@ -141,12 +141,39 @@
 
 .contact-btn {
   height: 45px;
+  padding-top: 10px;
   border: 1px solid #ddd;
   margin-left: 20px;
+  background-color: #80e8e0;
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+}
+
+.contact-btn:hover {
+  background-color: #00a699;
+  color: white;
 }
 
 .favorite-btn {
   height: 45px;
-  border: 1px solid #ddd;
-  margin-left: 20px;
+  padding-top: 10px;
+/*  border: 1px solid #ddd;*/
+/*  margin-left: 20px;*/
+  color: #80e8e0;
+  cursor: pointer
+}
+
+.favorite-btn:hover {
+  background-color: #fff;
+  color: #00a699;
+}
+
+.favorite-btn-active {
+  height: 45px;
+  padding-top: 10px;
+ /* border: 1px solid #ddd;*/
+ /* margin-left: 20px;*/
+  color: #00a699;
+  cursor: pointer
 }

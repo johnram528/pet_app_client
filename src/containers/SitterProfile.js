@@ -9,10 +9,23 @@ export default class SitterProfile extends Component {
   constructor(props){
     super(props)
 
+    this.state = {
+      favorited: false
+    }
+
+
+  }
+
+  handleOnFavClick() {
+    this.setState({
+      favorited:!this.state.favorited
+    })
+    
   }
   render() {
     const sitter = {
-      name: 'First Last',
+      first_name: 'First',
+      last_name: 'Last',
       header: 'La segunda casa de tu mascota',
       city: 'Santo Domingo',
       rating: '4.8',
@@ -33,11 +46,14 @@ export default class SitterProfile extends Component {
               </div>
               <div className='sitter-summary col-xs-12 col-md-5'>
                 <SitterSummary
-                  name={sitter.name}
+                  first_name={sitter.first_name}
+                  last_name={sitter.last_name}
                   header={sitter.header}
                   city={sitter.city}
                   rating={sitter.rating}
                   profile_pic={sitter.profile_pic}
+                  favorited={this.state.favorited}
+                  handleOnFavClick={this.handleOnFavClick.bind(this)}
                   />
               </div>  
             </div>
