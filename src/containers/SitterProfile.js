@@ -4,6 +4,7 @@ import NavBar from '../NavBar.js'
 import Footer from '../components/Footer.js'
 import SitterSlider from '../components/SitterSlider.js'
 import SitterSummary from '../components/SitterSummary.js'
+import SitterInfo from '../components/SitterInfo.js'
 
 export default class SitterProfile extends Component {
   constructor(props){
@@ -40,11 +41,11 @@ export default class SitterProfile extends Component {
         <section className='siter-profile-content'>
            <div className='sitter-main-wrap container'> 
             <div className='sitter-main row'>
-              <div className='sitter-photos col-xs-12 col-md-7'>
+              <div className='sitter-photos col-xs-12 col-md-8'>
                 <SitterSlider
                   photos={sitter.gallery}/>
               </div>
-              <div className='sitter-summary col-xs-12 col-md-5'>
+              <div className='sitter-summary col-xs-12 col-md-4'>
                 <SitterSummary
                   first_name={sitter.first_name}
                   last_name={sitter.last_name}
@@ -58,18 +59,18 @@ export default class SitterProfile extends Component {
               </div>  
             </div>
             <div className='sitter-services row'>
-              <div className='sitter-info col-xs-12 col-md-7'>SitterInfo</div>
-              <div className='sitter-calendar col-xs-12 col-md-5'>
+              <div className='sitter-info col-xs-12 col-md-8'><SitterInfo/></div>
+              <div className='sitter-calendar col-xs-12 col-md-4'>
                 SitterCalendar
               </div>
             </div>
             <div className='sitter-about row'>
-              <div className='sitter-profile-bio col-xs-12 col-md-7'>SitterBio</div>
-              <div className='sitter-pref col-xs-12 col-md-5'>SitterPref</div>
+              <div className='sitter-profile-bio col-xs-12 col-md-8'>SitterBio</div>
+              <div className='sitter-pref col-xs-12 col-md-4'>SitterPref</div>
             </div>
             <div className='sitter-feedback row'>
-              <div className='sitter-reviews col-xs-12 col-md-7'>SitterReviews</div>
-              <div className='sitter-profile-map col-xs-12 col-md-5'>SitterMap</div>
+              <div className='sitter-reviews col-xs-12 col-md-8'>SitterReviews</div>
+              <div className='sitter-profile-map col-xs-12 col-md-4'>SitterMap</div>
             </div>
           </div>
         </section>

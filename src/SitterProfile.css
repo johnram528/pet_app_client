@@ -26,12 +26,13 @@
 }
 
 .sitter-services {
-  height: 50vh;
+/*  height: 50vh;*/
 }
 
 .sitter-info {
-  background-color: blue;
-  height: 100%
+  background-color: white;
+  height: 100%;
+  margin-bottom: 10px 
 }
 
 .sitter-calendar {
@@ -142,9 +143,10 @@
 .contact-btn {
   height: 45px;
   padding-top: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid #80e8e0;
   margin-left: 20px;
   background-color: #80e8e0;
+  border-radius: 7px;
   font-weight: bold;
   color: #555;
   cursor: pointer;
@@ -152,6 +154,7 @@
 
 .contact-btn:hover {
   background-color: #00a699;
+  border-color: #80e8e0;
   color: white;
 }
 
@@ -176,4 +179,45 @@
  /* margin-left: 20px;*/
   color: #00a699;
   cursor: pointer
+}
+
+/*#table {
+  list-style: none;
+  text-align: initial;
+}*/
+
+.table-text {
+  float: left;
+  width: 70%;
+  color: #999;
+}
+
+.table-number {
+  float: right;
+  width: 30%;
+  color: #999;
+  text-align: end;
+}
+
+.section-title {
+  font-size: 18px;
+}
+
+.title {
+  font-size: 16px;
+  text-align: center
+}
+
+ul#table li {
+    text-align: initial;
+    list-style: none;
+    width: 100%;
+    padding: 1px 8px;
+    margin: 3px 0;
+    float: left;
+}
+
+.color {
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
 }
