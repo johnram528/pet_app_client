@@ -28,7 +28,7 @@ export default class SitterInfo extends Component {
                 <ul id="table">
                     <li className="title">Propiedad</li>
                     <li className="color"><span className="table-text">Tipo de propiedad:</span><span className="table-number">
-                        Departamento                    </span></li>
+                        Apartamento                    </span></li>
                     <li><span className="table-text">Tiene espacio libre:</span><span className="table-number">
                         Sí                    </span></li>
                     <li className="color"><span className="table-text">Perros residentes:</span><span className="table-number">

@@ -36,7 +36,8 @@
 }
 
 .sitter-calendar {
-  background-color: orange;
+  background-color: white;
+  margin-left: -6px;
   height: 100%
 }
 
@@ -45,7 +46,7 @@
 }
 
 .sitter-profile-bio {
-  background-color: yellow;
+  background-color: white;
   height: 100%
 }
 
@@ -220,4 +221,12 @@ ul#table li {
 .color {
   border-bottom: 1px solid #ddd;
   border-top: 1px solid #ddd;
+}
+
+.bio-title {
+  font-size: 18px;
+}
+
+.bio-body {
+  text-align: initial;
 }
