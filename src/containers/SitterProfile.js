@@ -6,6 +6,8 @@ import SitterSlider from '../components/SitterSlider.js'
 import SitterSummary from '../components/SitterSummary.js'
 import SitterInfo from '../components/SitterInfo.js'
 import { DayPicker} from 'react-dates';
+import GoogleMap from 'google-map-react';
+import ProfileMarker from '../components/ProfileMarker.js'
 
 export default class SitterProfile extends Component {
   constructor(props){
@@ -80,7 +82,22 @@ export default class SitterProfile extends Component {
             </div>
             <div className='sitter-feedback row'>
               <div className='sitter-reviews col-xs-12 col-md-8'>SitterReviews</div>
-              <div className='sitter-profile-map col-xs-12 col-md-4'>SitterMap</div>
+              <div className='sitter-profile-map col-xs-12 col-md-4'>
+                <GoogleMap
+                center={[18.4596542, -69.9312117]}
+                zoom={14}
+                options={{
+                  scrollwheel: false,
+                  clickableIcons: false,
+                  fullscreenControl: false,
+                  maxZoom: 15,
+                  minZoom: 7,
+                }}
+
+                >
+                <ProfileMarker lat={18.4596542} lng={-69.9312117}/>
+                </GoogleMap>
+              </div>
             </div>
           </div>
         </section>

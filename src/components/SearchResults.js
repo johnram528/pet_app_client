@@ -112,6 +112,8 @@ export default class SearchResult extends Component {
                   scrollwheel: false,
                   clickableIcons: false,
                   fullscreenControl: false,
+                  maxZoom: 15,
+                  minZoom: 7,
 
                 }}
                 ref='map'>

@@ -13,7 +13,7 @@ export default class SitterMarker extends Component {
 
   render() {
     const style = this.props.$hover ? sitterMarkerStyleHover : sitterMarkerStyle;
-    const status = this.props.$hover ? 'sitter-marker-active' : 'sitter-marer'
+    const status = this.props.$hover ? 'sitter-marker-active' : 'sitter-marker'
     return (
        <div className={status} style={style} onClick={()=> this.handleClick()} data-tip={this.props.name}>
           <i className="fa fa-paw" aria-hidden="true"></i>

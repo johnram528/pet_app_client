@@ -42,12 +42,13 @@
 }
 
 .sitter-about {
-  height: 50vh;
+  height: 100%;
 }
 
 .sitter-profile-bio {
   background-color: white;
-  height: 100%
+  height: 100%;
+  margin-bottom: 10px;
 }
 
 .sitter-pref {
@@ -65,8 +66,8 @@
 }
 
 .sitter-profile-map {
-  background-color: yellow;
   height: 50vh;
+
 }
 
 .sitter-profile-footer {
@@ -91,7 +92,7 @@
 }
 
 .provider-card {
-
+  margin-top: 5px;
 }
 .provider-card-pic {
   height: 100px;
@@ -190,13 +191,13 @@
 .table-text {
   float: left;
   width: 70%;
-  color: #999;
+  color: #707070;
 }
 
 .table-number {
   float: right;
   width: 30%;
-  color: #999;
+  color: #707070;
   text-align: end;
 }
 
