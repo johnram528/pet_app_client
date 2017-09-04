@@ -33,7 +33,7 @@ export default class SitterReviews extends Component {
     return(
         <div className='reviews-wrap col-xs-12'>
           <div className='reviews-data row'>
-           <div className='reviews-rating-amt col-xs-4 col-lg-2'>{this.props.review_info.total + ' Reseñas' } </div>
+           <div className='reviews-rating-amt col-xs-4 col-lg-3'>{this.props.review_info.total + ' Reseñas' } </div>
            <div className='reviews-rating-avg col-xs-5 col-lg-4'>
             <ReactStars
               count={5}

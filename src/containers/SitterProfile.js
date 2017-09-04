@@ -40,6 +40,10 @@ export default class SitterProfile extends Component {
       reviews: [{reviewer: 'test 1', date: '9-3-2017', body: 'Excelente persona con mucha calidad humana y gran cariño por las mascotas que le dejamos a su cuidado, siempre en contacto conmigo de como estaba Cushufleta, fotos y videos de mi perrhija y yo siempre feliz de no verla descuidada. Encantada con el servicio y profesionalismo, definitivamente la mejor opcion. Muy agradecida con Kariam.', rating: '5', profile_pic:'https://roneindyhiphop.files.wordpress.com/2017/02/148777547253231-e1487775574321.jpeg?quality=100&strip=all&w=1024' }, {reviewer: 'test 2', date: '9-3-2017', body: 'Excelente persona con mucha calidad humana y gran cariño por las mascotas que le dejamos a su cuidado, siempre en contacto conmigo de como estaba Cushufleta, fotos y videos de mi perrhija y yo siempre feliz de no verla descuidada. Encantada con el servicio y profesionalismo, definitivamente la mejor opcion. Muy agradecida con Kariam.', rating: '4', profile_pic: 'https://roneindyhiphop.files.wordpress.com/2017/02/148777547253231-e1487775574321.jpeg?quality=100&strip=all&w=1024'}],
       review_info: {total:2, average:4.5}
     }
+
+    const reviews = ( <div className='sitter-reviews col-xs-12 col-md-8'>
+                <SitterReviews reviews={sitter.reviews} review_info={sitter.review_info}/>
+              </div>)
     return (
       <div className='sitterWrap'>
         <section className='sitter-profile-header'>
@@ -86,7 +90,9 @@ export default class SitterProfile extends Component {
               <div className='sitter-pref col-xs-12 col-md-4'><SitterPreferences/></div>
             </div>
             <div className='sitter-feedback row'>
-              <div className='sitter-reviews col-xs-12 col-md-8'><SitterReviews reviews={sitter.reviews} review_info={sitter.review_info}/></div>
+              <div className='sitter-reviews col-xs-12 col-md-8'>
+                { sitter.reviews && <SitterReviews reviews={sitter.reviews} review_info={sitter.review_info}/>}
+              </div>
               <div className='sitter-profile-map col-xs-12 col-md-4'>
                 <GoogleMap
                 center={[18.4596542, -69.9312117]}
