@@ -9,6 +9,7 @@ import { DayPicker} from 'react-dates';
 import GoogleMap from 'google-map-react';
 import ProfileMarker from '../components/ProfileMarker.js'
 import SitterReviews from '../components/SitterReviews.js'
+import SitterPreferences from '../components/SitterPreferences.js'
 
 export default class SitterProfile extends Component {
   constructor(props){
@@ -64,6 +65,8 @@ export default class SitterProfile extends Component {
                   />
               </div>  
             </div>
+          </div>
+          <div className='sitter-info-wrap container'>
             <div className='sitter-services row'>
               <div className='sitter-info col-xs-12 col-md-8'><SitterInfo/></div>
               <div className='sitter-calendar col-xs-12 col-md-4'>
@@ -80,7 +83,7 @@ export default class SitterProfile extends Component {
                 <div className='bio-title'>Sobre {sitter.first_name}</div>
                 <div className='bio-body'>{sitter.bio}</div>
               </div>
-              <div className='sitter-pref col-xs-12 col-md-4'>SitterPref</div>
+              <div className='sitter-pref col-xs-12 col-md-4'><SitterPreferences/></div>
             </div>
             <div className='sitter-feedback row'>
               <div className='sitter-reviews col-xs-12 col-md-8'><SitterReviews reviews={sitter.reviews} review_info={sitter.review_info}/></div>
