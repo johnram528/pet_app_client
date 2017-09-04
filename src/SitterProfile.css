@@ -281,3 +281,48 @@ ul#table li {
   padding-top: 4px;
 
 }
+
+.sitter-pref-headline {
+  font-size: 18px;
+  text-align: initial;
+}
+
+.pref-pet-sizes {
+  margin-top: 10px;
+}
+
+.pref-pet-qty {
+  text-align: initial;
+  margin-top: 10px; 
+}
+.pet-size-xs {
+  margin-top: 11px;
+}
+
+.pet-size-sm {
+  margin-top: 9px;
+}
+
+.pet-size-md {
+  margin-top: 5px;
+}
+
+.pet-size-xs > .fa-paw {
+  font-size: 15px;
+}
+
+.pet-size-sm > .fa-paw {
+  font-size: 20px;
+}
+
+.pet-size-md > .fa-paw {
+  font-size: 25px;
+}
+
+.pet-size-lg > .fa-paw {
+  font-size: 30px;
+}
+
+.reject {
+  opacity: .2;
+}
