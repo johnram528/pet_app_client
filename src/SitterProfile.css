@@ -61,8 +61,8 @@
 }
 
 .sitter-reviews {
-  background-color: blue;
-  height: 600px;
+  background-color: white;
+  height: 100%;
 }
 
 .sitter-profile-map {
@@ -183,10 +183,6 @@
   cursor: pointer
 }
 
-/*#table {
-  list-style: none;
-  text-align: initial;
-}*/
 
 .table-text {
   float: left;
@@ -230,4 +226,45 @@ ul#table li {
 
 .bio-body {
   text-align: initial;
+}
+
+.review-header-pic img{
+  height: 55px;
+  margin-left: -10px;
+  border-radius: 50%
+}
+
+.review-header-pic {
+  text-align: initial;
+}
+
+.profile-review {
+  border-top: 1px solid #ddd;
+  margin-top: 10px; 
+}
+
+.reviews-data {
+  text-align: initial;
+  margin-top: 5px;
+  font-size: 18px;
+  color: #80e8e0;
+  font-weight: bold;
+  background-color: snow;
+  border-radius: 3px;
+  border: 1px dotted #ddd;
+  padding: 2px;
+}
+
+.review-header-body {
+    text-align: initial;
+    margin-left: 5px;
+}
+
+.review-body {
+  text-align: initial;
+  margin-top: 3px;
+}
+
+.review-header{
+  margin-top: 10px;
 }
