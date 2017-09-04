@@ -275,3 +275,8 @@ ul#table li {
 .header-name, .header-date {
   color: #999;
 }
+
+.reviews-rating-amt {
+  padding-top: 4px;
+
+}

@@ -4,6 +4,7 @@ import SitterMarker from './SitterMarker'
 import '../SitterCard.css'
 import {Link} from 'react-router-dom'
 import SearchPageForm from './SearchForm/SearchPageForm'
+import ReactStars from 'react-stars'
 
 export default class SearchResult extends Component {
     static propTypes = {
@@ -50,7 +51,14 @@ export default class SearchResult extends Component {
             </div>
             <div className='profile-header hidden-xs'>{sitter.header}</div>
             <div className='card-location'>{sitter.location}</div>
-            <div className='card-review'>{sitter.rating}</div>
+            <div className='card-review'>
+              <ReactStars
+              count={5}
+              value={sitter.rating}
+              size={15}
+              edit={false}
+              color2={'#ffd700'} />
+            </div>
           </div>
           <div className='col-xs-3 min-price-div'>
             <div className='money-corner'>
