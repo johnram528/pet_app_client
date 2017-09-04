@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ReactStars from 'react-stars'
 
 export default class SitterReviews extends Component {
   constructor(props){
@@ -16,7 +17,14 @@ export default class SitterReviews extends Component {
               <div className='review-header-body col-xs-5'>
                 <div className='header-name'>{review.reviewer}</div>
                 <div className='header-date'>{review.date}</div>
-                <div className='header-rating'>{review.rating}</div>
+                <div className='header-rating'>
+                  <ReactStars
+                  count={5}
+                  value={review.rating}
+                  size={15}
+                  edit={false}
+                  color2={'#ffd700'} />
+                </div>
               </div>
             </div>
             <div className='review-body row'>{review.body}</div>
@@ -26,7 +34,14 @@ export default class SitterReviews extends Component {
         <div className='reviews-wrap col-xs-12'>
           <div className='reviews-data row'>
            <div className='reviews-rating-amt col-xs-4 col-lg-2'>{this.props.review_info.total + ' Reseñas' } </div>
-           <div className='reviews-rating-avg col-xs-4 col-lg-4'>{this.props.review_info.average}</div>
+           <div className='reviews-rating-avg col-xs-4 col-lg-4'>
+            <ReactStars
+              count={5}
+              value={this.props.review_info.average}
+              size={24}
+              edit={false}
+              color2={'#ffd700'} />
+          </div>
           </div>
           {reviews}
         </div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react' 
-
+import ReactStars from 'react-stars'
 
 export default class SitterSummary extends Component {
   constructor(props){
@@ -17,7 +17,14 @@ export default class SitterSummary extends Component {
           <div className='pcard-name col-xs-12'>{this.props.first_name+' '+this.props.last_name}</div>
           <div className='pcard-header col-xs-12'>{this.props.header}</div>
           <div className='pcard-location col-xs-12'>{this.props.city}</div>
-          <div className='pcard-rating col-xs-12'>{this.props.rating}</div>
+          <div className='pcard-rating col-xs-12'>
+              <ReactStars
+              count={5}
+              value={this.props.rating}
+              size={15}
+              edit={false}
+              color2={'#ffd700'} />
+          </div>
         </div>
       </div>
       <div className='services-wrap row'>

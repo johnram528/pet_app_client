@@ -7,6 +7,10 @@
   height: 500px;
 }
 
+.sitter-info-wrap{
+  background-color: white;
+}
+
 .sitter-photos {
   background-color: white;
   border: 1px solid #ddd;
@@ -266,4 +270,8 @@ ul#table li {
 
 .review-header{
   margin-top: 10px;
+}
+
+.header-name, .header-date {
+  color: #999;
 }
