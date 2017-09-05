@@ -13,6 +13,12 @@
     margin-top: -20px;
     background-color:grey;
   }
+  @media (max-width: 767px) {
+    .bottom-content-container {
+      margin-top: 212px;
+      background-color:grey;
+    }
+  }
 
   .top-content-container {
     position: relative;
@@ -41,7 +47,7 @@
 
   @media (max-width: 767px) {
    .search-container {
-      /*overflow-x: hidden;*/
+      margin-top: 40px;
       ;
     }
   }
@@ -61,8 +67,14 @@
   @media (max-width: 767px){
   .search-form {
       background: none;
-      color: #000;
+      color: black;
       padding: 10px;
+    }
+  }
+
+@media (max-width: 767px){
+  div >.buttons-tab > .stay-button > label, div >.buttons-tab > .stay-button-active > label {
+      color: black;
     }
   }
 
@@ -126,10 +138,10 @@
     }
 /*  }*/
 
-/*  @media (max-width: 767px){
+  @media (max-width: 767px){
   .top-content-container {
       height: 300px;
-      margin-bottom: -40px;
+/*      margin-bottom: -40px;*/
       text-align: left;
       display: -webkit-box;
       display: -ms-flexbox;
@@ -144,7 +156,7 @@
       color: #fff;
       padding-top: 25px;
     }
-  }*/
+  }
 
 .geosuggest {
     font-size: 14px;

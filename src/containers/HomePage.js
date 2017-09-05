@@ -95,7 +95,7 @@ class HomePage extends Component {
               <div className='simo-content'>
                 <TopContent/>
                 <div className='search-container'>
-                  <form className='search-form'>
+                  <form className='search-form col-xs-12'>
                     <div className='row'>
                       <div className='col-xs-12 col-lg-12'>
                         <StayTypeButtons
