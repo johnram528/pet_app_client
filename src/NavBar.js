@@ -21,7 +21,7 @@ export default (props) => {
             <NavItem eventKey={2} href="#">Hazte Cuidador</NavItem>
           </Nav>
           <Nav pullRight>
-            <NavItem eventKey={1} href="#">Ingresar</NavItem>
+            <NavItem eventKey={1} href="/login">Ingresar</NavItem>
             <NavItem eventKey={2} href="#">Registrate</NavItem>
           </Nav>
         </Navbar.Collapse>
