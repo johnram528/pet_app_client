@@ -11,7 +11,7 @@ import SitterProfile from './containers/SitterProfile'
 import createBrowserHistory from 'history/createBrowserHistory'
 
 
-const history = createBrowserHistory()
+const history = createBrowserHistory({forceRefresh: true})
 
 export default () => (
   <Router history={history}>

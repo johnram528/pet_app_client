@@ -1,0 +1,23 @@
+@media (min-width: 768px)
+.login-block {
+    border-radius: 4px;
+    padding: 40px;
+}
+
+.login-block {
+    background: #fff;
+    -webkit-box-shadow: 0 3px 0 #ddd;
+    box-shadow: 0 3px 0 #ddd;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.login-button {
+  border: 1px solid #ddd;
+  background-color: green;
+  width: 33%;
+}
+
+.form-group{
+  margin-bottom: 15px;
+}

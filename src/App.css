@@ -380,6 +380,12 @@ em {
     height: 42px;
   }
 
+.col-center {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 
 
