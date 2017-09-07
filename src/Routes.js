@@ -9,9 +9,9 @@ import SearchPage from './containers/SearchPage'
 import Login from './containers/Login'
 import SitterProfile from './containers/SitterProfile'
 import createBrowserHistory from 'history/createBrowserHistory'
+import createHashHistory from 'history/createHashHistory'
 
-
-const history = createBrowserHistory({forceRefresh: true})
+const history = createHashHistory()
 
 export default () => (
   <Router history={history}>
