@@ -8,9 +8,9 @@ import Routes from './Routes'
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Routes/>
-      </div>
+      <Routes>
+        <div className="App"></div>
+      </Routes>
     );
   }
 }

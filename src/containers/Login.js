@@ -37,7 +37,7 @@ export default class Login extends Component {
     'Content-Type': 'application/json'
       },
       body: credentials
-    })
+    }).then(response => console.log(response.json()))
   }
 
   render(){
