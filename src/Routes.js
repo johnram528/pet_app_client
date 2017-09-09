@@ -1,6 +1,7 @@
 import React from 'react'
 import {
   BrowserRouter as Router,
+  HashRouter,
   Route,
   Link
 } from 'react-router-dom'
@@ -11,15 +12,16 @@ import SitterProfile from './containers/SitterProfile'
 import createBrowserHistory from 'history/createBrowserHistory'
 import createHashHistory from 'history/createHashHistory'
 
-const history = createHashHistory()
+// const history = createBrowserHistory()
 
 export default () => (
-  <Router history={history}>
+  <Router basename="/" >
   <div>
     <Route exact path="/" component={HomePage}/>
     <Route path="/search" component={SearchPage}/>
     <Route path="/sitters/:sitterId" component={SitterProfile}/>
     <Route path="/login" component={Login}/>
+
   </div>
 </Router>
   ) 
