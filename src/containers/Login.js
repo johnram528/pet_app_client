@@ -68,6 +68,12 @@ export default class Login extends Component {
     })
   }
 
+  handleOnInputKeyDown(ev){
+    if(ev.key == "Enter"){
+      this.handleOnLoginSubmit()
+    }
+  }
+
 
 
   render(){
@@ -95,7 +101,7 @@ export default class Login extends Component {
                           <input type='text' placeholder='Correo electrónico' onChange={(ev)=> this.handleOnEmailChange(ev)}></input>
                         </div>
                          <div className='form-group'>
-                          <input type='password' placeholder='Contraseña' onChange={(ev)=> this.handleOnPasswordChange(ev)} value={this.state.password}></input>
+                          <input type='password' placeholder='Contraseña' onChange={(ev)=> this.handleOnPasswordChange(ev)} value={this.state.password} onKeyPress={(ev)=> this.handleOnInputKeyDown(ev)}></input>
                         </div>
                         <div className='login-button col-center' onClick={()=> this.handleOnLoginSubmit()}>
                           Ingresar con correo
