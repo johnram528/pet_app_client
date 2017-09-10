@@ -87,6 +87,7 @@ class HomePage extends Component {
   }
 
   render() {
+    console.log(this.props.signedIn)
     return (
         <div className='main-content-wrap'>
           <NavBar/>

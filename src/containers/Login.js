@@ -11,6 +11,8 @@ export default class Login extends Component {
     this.state = {
       email: '',
       password: '',
+      auth_id: null,
+      signedIn: !!localStorage.token
     }
 
   }
@@ -37,8 +39,15 @@ export default class Login extends Component {
     'Content-Type': 'application/json'
       },
       body: credentials
-    }).then(response => console.log(response.json()))
+    }).then(response => {
+      if(response.ok) {
+        return response.json()
+        }
+      }).then(parsedData => localStorage.token = parsedData.auth_token)
+    
   }
+
+
 
   render(){
     return(

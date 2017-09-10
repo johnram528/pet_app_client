@@ -6,10 +6,16 @@ import Routes from './Routes.js'
 
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      signedIn: !!localStorage.token
+    }
+  }
   render() {
     return (
         <div className="App">
-          <Routes/>
+          <Routes signedIn={this.state.signedIn}/>
         </div>
     );
   }

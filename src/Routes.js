@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import {
   BrowserRouter as Router,
   HashRouter,
@@ -14,14 +14,21 @@ import createHashHistory from 'history/createHashHistory'
 
 // const history = createBrowserHistory()
 
-export default () => (
+export default class Routes extends Component {
+  constructor(props) {
+    super(props)
+  }
+render(){ 
+
+  return ( 
   <Router basename="/" >
   <div>
-    <Route exact path="/" component={HomePage}/>
+    <Route exact path="/" render={()=> <HomePage signedIn={this.props.signedIn}/>}/>
     <Route path="/search" component={SearchPage}/>
     <Route path="/sitters/:sitterId" component={SitterProfile}/>
     <Route path="/login" component={Login}/>
-
   </div>
 </Router>
   ) 
+  }
+}
