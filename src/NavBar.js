@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { Link } from 'react-router-dom'
 
@@ -5,7 +6,20 @@ import {Navbar, Nav, NavItem, NavDropdown, MenuItem} from 'react-bootstrap'
 import './NavBar.css'
 
 export default (props) => {
-
+  const unAuthNav = (
+            <Nav pullRight>
+              <NavItem eventKey={1}><Link to ="/login">Ingresar</Link></NavItem>
+              <NavItem eventKey={2} href="#">Registrate</NavItem>
+            </Nav>)
+  const authNav = ( <Nav pullRight>
+                      <NavDropdown eventKey={1} title={props.firstname}>
+                        <MenuItem eventKey="1.1">Dashboard</MenuItem>
+                        <MenuItem eventKey="1.2">Profile</MenuItem>
+                        <MenuItem eventKey="1.3">Inbox</MenuItem>
+                        <MenuItem divider />
+                        <MenuItem eventKey="1.4" onClick={()=> {localStorage.removeItem('token'); window.location.reload()}}>Logout</MenuItem>
+                      </NavDropdown>
+                    </Nav>)
     return (
 <site-header>      
   <div className='navbar-wrapper'>
@@ -21,10 +35,9 @@ export default (props) => {
             <NavItem eventKey={1}><Link to ="/search">Buscar Cuidadores</Link></NavItem>
             <NavItem eventKey={2} href="#">Hazte Cuidador</NavItem>
           </Nav>
-          <Nav pullRight>
-            <NavItem eventKey={1}><Link to ="/login">Ingresar</Link></NavItem>
-            <NavItem eventKey={2} href="#">Registrate</NavItem>
-          </Nav>
+
+            {!props.signedIn ? unAuthNav : authNav}
+
         </Navbar.Collapse>
       </Navbar>
     </div>

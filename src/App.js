@@ -15,7 +15,7 @@ class App extends Component {
   render() {
     return (
         <div className="App">
-          <Routes signedIn={this.state.signedIn}/>
+          <Routes signedIn={this.state.signedIn} firstname={localStorage.firstname}/>
         </div>
     );
   }

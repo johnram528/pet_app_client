@@ -23,7 +23,7 @@ render(){
   return ( 
   <Router basename="/" >
   <div>
-    <Route exact path="/" render={()=> <HomePage signedIn={this.props.signedIn}/>}/>
+    <Route exact path="/" render={()=> <HomePage signedIn={this.props.signedIn} firstname={this.props.firstname}/>}/>
     <Route path="/search" component={SearchPage}/>
     <Route path="/sitters/:sitterId" component={SitterProfile}/>
     <Route path="/login" component={Login}/>

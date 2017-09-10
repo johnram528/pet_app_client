@@ -43,7 +43,10 @@ export default class Login extends Component {
       if(response.ok) {
         return response.json()
         }
-      }).then(parsedData => localStorage.token = parsedData.auth_token)
+      }).then(parsedData => {
+        localStorage.token = parsedData.auth_token;
+        localStorage.firstname = parsedData.firstname;
+      })
     
   }
 

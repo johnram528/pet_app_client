@@ -87,10 +87,10 @@ class HomePage extends Component {
   }
 
   render() {
-    console.log(this.props.signedIn)
+    
     return (
         <div className='main-content-wrap'>
-          <NavBar/>
+          <NavBar signedIn={this.props.signedIn} firstname={this.props.firstname}/>
           <div className='top-content-container'>
             <div className='simo-content-wrap'>
               <div className='simo-content'>
