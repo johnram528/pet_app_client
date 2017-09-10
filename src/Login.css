@@ -32,3 +32,8 @@
   border: none;
   border-bottom: 2px solid #80e8e0;
 }
+
+[data-react-toolbox="snackbar"] {
+  text-align: center;
+  color: orangered;
+}

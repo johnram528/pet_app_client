@@ -2,6 +2,7 @@ import React, { Component} from 'react'
 import NavBar from '../NavBar.js'
 import Footer from '../components/Footer'
 import '../Login.css'
+import Snackbar from 'react-toolbox/lib/snackbar/Snackbar.js';
 
 
 export default class Login extends Component {
@@ -12,10 +13,18 @@ export default class Login extends Component {
       email: '',
       password: '',
       auth_id: null,
-      signedIn: !!localStorage.token
+      signedIn: !!localStorage.token, 
+      error: false, 
     }
 
   }
+  handleErrors(response) {
+    if (!response.ok) {
+        throw Error(response.statusText);
+    }
+    return response;
+  }
+
   handleOnEmailChange(ev){
     console.log(ev.target.value)
     this.setState({
@@ -39,15 +48,24 @@ export default class Login extends Component {
     'Content-Type': 'application/json'
       },
       body: credentials
-    }).then(response => {
-      if(response.ok) {
-        return response.json()
-        }
-      }).then(parsedData => {
+    }).then(this.handleErrors)
+    .then(response => response.json())
+    .then(parsedData => {
         localStorage.token = parsedData.auth_token;
         localStorage.firstname = parsedData.firstname;
+        window.location.replace("/")
       })
+    .catch(error => this.setState({
+      error:true,
+      password: ''
+    }))
     
+  }
+
+  handleSnackbarTimeout() {
+    this.setState({
+      error: false,
+    })
   }
 
 
@@ -77,12 +95,19 @@ export default class Login extends Component {
                           <input type='text' placeholder='Correo electrónico' onChange={(ev)=> this.handleOnEmailChange(ev)}></input>
                         </div>
                          <div className='form-group'>
-                          <input type='password' placeholder='Contraseña' onChange={(ev)=> this.handleOnPasswordChange(ev)}></input>
+                          <input type='password' placeholder='Contraseña' onChange={(ev)=> this.handleOnPasswordChange(ev)} value={this.state.password}></input>
                         </div>
                         <div className='login-button col-center' onClick={()=> this.handleOnLoginSubmit()}>
                           Ingresar con correo
                         </div>
                       </form>
+                      <Snackbar
+                        active={this.state.error}
+                        label='Email o contraseña incorrectos'
+                        timeout={3000}
+                        onTimeout={()=> this.handleSnackbarTimeout()}
+                        type='warning'
+                      />
                     </div>
 
                   </div>

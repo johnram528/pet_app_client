@@ -12,7 +12,7 @@ export default (props) => {
               <NavItem eventKey={2} href="#">Registrate</NavItem>
             </Nav>)
   const authNav = ( <Nav pullRight>
-                      <NavDropdown eventKey={1} title={props.firstname}>
+                      <NavDropdown eventKey={1} title={props.firstname||'title'}>
                         <MenuItem eventKey="1.1">Dashboard</MenuItem>
                         <MenuItem eventKey="1.2">Profile</MenuItem>
                         <MenuItem eventKey="1.3">Inbox</MenuItem>
