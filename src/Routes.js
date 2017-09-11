@@ -15,15 +15,13 @@ import createHashHistory from 'history/createHashHistory'
 // const history = createBrowserHistory()
 
 export default class Routes extends Component {
-  constructor(props) {
-    super(props)
-  }
+
 render(){ 
 
   return ( 
   <Router basename="/" >
   <div>
-    <Route exact path="/" render={()=> <HomePage signedIn={this.props.signedIn} firstname={this.props.firstname}/>}/>
+    <Route exact path="/" component={HomePage}/>
     <Route path="/search" component={SearchPage}/>
     <Route path="/sitters/:sitterId" component={SitterProfile}/>
     <Route path="/login" component={Login}/>

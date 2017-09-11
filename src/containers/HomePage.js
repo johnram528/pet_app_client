@@ -90,7 +90,7 @@ class HomePage extends Component {
     
     return (
         <div className='main-content-wrap'>
-          <NavBar signedIn={this.props.signedIn} firstname={this.props.firstname}/>
+         <NavBar signedIn={!!localStorage.token} firstname={localStorage.firstname}/>
           <div className='top-content-container'>
             <div className='simo-content-wrap'>
               <div className='simo-content'>

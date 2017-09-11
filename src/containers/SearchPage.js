@@ -98,7 +98,7 @@ class SearchPage extends Component {
     return (
         <div className='search-page-wrap'>
           <section className='search-page-header'>
-            <NavBar signedIn={this.props.signedIn} firstname={this.props.firstname}/>
+            <NavBar signedIn={!!localStorage.token} firstname={localStorage.firstname}/>
           </section>
           <section className='search-page-content container-fluid'>
 
