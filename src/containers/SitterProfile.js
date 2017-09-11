@@ -48,7 +48,7 @@ export default class SitterProfile extends Component {
     return (
       <div className='sitterWrap'>
         <section className='sitter-profile-header'>
-          <NavBar/>
+          <NavBar signedIn={this.props.signedIn} firstname={this.props.firstname}/>
         </section>
         <section className='siter-profile-content'>
            <div className='sitter-main-wrap container'> 

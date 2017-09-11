@@ -31,9 +31,14 @@
   width: 250px;
   border: none;
   border-bottom: 2px solid #80e8e0;
+  outline: none
 }
 
 [data-react-toolbox="snackbar"] {
   text-align: center;
   color: orangered;
+}
+
+.form-group > input:focus{
+  border-bottom: 2px solid #80e8e0;
 }
