@@ -8,7 +8,6 @@ import Snackbar from 'react-toolbox/lib/snackbar/Snackbar.js';
 export default class Login extends Component {
   constructor(props){
     super(props)
-
     this.state = {
       email: '',
       password: '',
@@ -35,7 +34,8 @@ export default class Login extends Component {
   handleOnPasswordChange(ev){
     console.log(ev.target.value)
     this.setState({
-      password: ev.target.value
+      password: ev.target.value,
+      email: this.refs.email.value
     })
   }
 
@@ -99,7 +99,7 @@ export default class Login extends Component {
                     <div className='login-input-wrap'>
                       <form className='login-form'>
                         <div className='form-group'>
-                          <input type='text' placeholder='Correo electrónico' onChange={(ev)=> this.handleOnEmailChange(ev)} defaultValue={localStorage.email}></input>
+                          <input type='text' placeholder='Correo electrónico' ref='email' onChange={(ev)=> this.handleOnEmailChange(ev)} defaultValue={localStorage.email}></input>
                         </div>
                          <div className='form-group'>
                           <input type='password' placeholder='Contraseña' onChange={(ev)=> this.handleOnPasswordChange(ev)} value={this.state.password} onKeyPress={(ev)=> this.handleOnInputKeyDown(ev)}></input>
