@@ -11,7 +11,7 @@ import Login from './containers/Login'
 import SitterProfile from './containers/SitterProfile'
 import createBrowserHistory from 'history/createBrowserHistory'
 import createHashHistory from 'history/createHashHistory'
-
+import SignUp from './containers/SignUp'
 // const history = createBrowserHistory()
 
 export default class Routes extends Component {
@@ -25,6 +25,7 @@ render(){
     <Route path="/search" component={SearchPage}/>
     <Route path="/sitters/:sitterId" component={SitterProfile}/>
     <Route path="/login" component={Login}/>
+    <Route path="/signup" component={SignUp}/>
   </div>
 </Router>
   ) 

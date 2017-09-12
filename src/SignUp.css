@@ -1,0 +1,44 @@
+@media (min-width: 768px)
+.signUp-block {
+    border-radius: 4px;
+    padding: 40px;
+}
+
+.signUp-block {
+    background: #fff;
+    -webkit-box-shadow: 0 3px 0 #ddd;
+    box-shadow: 0 3px 0 #ddd;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.signUp-button {
+    border: 2px solid #ddd;
+    background-color: #00a699;
+    width: 250px;
+    height: 40px;
+    padding-top: 8px;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.form-group{
+  margin-bottom: 15px;
+}
+
+.form-group > input{
+  width: 250px;
+  border: none;
+  border-bottom: 2px solid #80e8e0;
+  outline: none
+}
+
+[data-react-toolbox="snackbar"] {
+  text-align: center;
+  color: orangered;
+}
+
+.form-group > input:focus{
+  border-bottom: 2px solid #80e8e0;
+}
