@@ -1,4 +1,4 @@
-
+  
 import React from 'react'
 import { Link } from 'react-router-dom'
 
@@ -9,7 +9,7 @@ export default (props) => {
   const unAuthNav = (
             <Nav pullRight>
               <NavItem eventKey={1}><Link to ="/login">Ingresar</Link></NavItem>
-              <NavItem eventKey={2} href="#">Registrate</NavItem>
+              <NavItem eventKey={2}><Link to ="/signup">Registrate</Link></NavItem>
             </Nav>)
   const authNav = ( <Nav pullRight>
                       <NavDropdown eventKey={1} title={props.firstname||'title'}>
@@ -44,13 +44,3 @@ export default (props) => {
   </site-header>
   )
 }
-
-
-            // <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-            //   <MenuItem eventKey={3.1}>Action</MenuItem>
-            //   <MenuItem eventKey={3.2}>Another action</MenuItem>
-            //   <MenuItem eventKey={3.3}>Something else here</MenuItem>
-            //   <MenuItem divider />
-            //   <MenuItem eventKey={3.3}>Separated link</MenuItem>
-            // </NavDropdown>
-            // <NavItem eventKey={1} href="/login">Ingresar</NavItem>
