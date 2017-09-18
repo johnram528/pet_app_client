@@ -4,22 +4,30 @@ import Footer from '../components/Footer'
 import '../SignUp.css'
 import Snackbar from 'react-toolbox/lib/snackbar/Snackbar.js';
 import { Link } from 'react-router-dom'
+import validator from 'validator';
+import ReactPasswordStrength from 'react-password-strength'
 
-
-export default class Login extends Component {
+export default class SignUp extends Component {
   constructor(props){
     super(props)
     this.state = {
       email: '',
-      password: '',
+      emailValid: false,
+      password: null,
       passwordConf: '',
-      firstName: '',
-      lastName: '',
+      passwordMatch: false,
+      passwordStrong: false,
+      firstName: null,
+      firstNameValid: false,
+      lastName: null,
+      lastNameValid: false,
       auth_id: null, 
       error: false, 
+      allGreen: false,
     }
-
+    const checkIfAllGreen = this.state.emailValid && this.state.passwordStrong && this.state.passwordMatch && this.state.firstNameValid && this.state.lastNameValid
   }
+ 
   handleErrors(response) {
     if (!response.ok) {
         throw Error(response.statusText);
@@ -30,49 +38,68 @@ export default class Login extends Component {
   handleOnEmailChange(ev){
     console.log(ev.target.value)
     this.setState({
-      email: ev.target.value
+      email: ev.target.value,
+      emailValid: validator.isEmail(this.state.email),
     })
+    if(this.state.emailValid){
+      this.checkIfAllGreen()
+    }
   }
 
   handleOnPasswordChange(ev){
-    console.log(ev.target.value)
+    console.log(ev)
     this.setState({
-      password: ev.target.value,
+      password: ev.password,
+      passwordStrong: ev.isValid,
+      passwordMatch: this.state.passwordConf == this.state.password,
     })
+    if(this.state.passwordStrong){
+      this.checkIfAllGreen()
+    }
   }
 
   handleOnPasswordConfChange(ev){
     console.log(ev.target.value)
     this.setState({
       passwordConf: ev.target.value,
+      passwordMatch: ev.target.value == this.state.password,
     })
+    if(this.state.passwordMatch){
+      this.checkIfAllGreen()
+    }
   }
 
-  handleOnSignUpSubmit(){
-    debugger
-    const credentials = JSON.stringify({session: { email: this.state.email, password: this.state.password}})
-    fetch('http://localhost:3001/api/sessions',{
-      method: 'POST', 
-      headers: {
-    'Accept': 'application/json, text/plain, */*',
-    'Content-Type': 'application/json'
-      },
-      body: credentials
-    }).then(this.handleErrors)
-    .then(response => response.json())
-    .then(parsedData => {
-        localStorage.token = parsedData.auth_token;
-        localStorage.firstname = parsedData.firstname;
-        localStorage.email = parsedData.email;
-        window.location.replace("/")
-      })
-    .catch(error => this.setState({
-      error:true,
-      password: '', 
-      passwordConf: '',
+  // handleOnEmailBlur(){
+  //   validator.isEmail(this.state.email) ? this.setState({emailValid: true}) : this.setState({emailValid: false})
+  // }
 
-    }))
-    
+  handleOnSignUpSubmit(){
+   this.checkIfAllGreen()
+    if(this.state.allGreen) {
+      const credentials = JSON.stringify({session: { email: this.state.email, password: this.state.password}})
+      fetch('http://localhost:3001/api/sessions',{
+        method: 'POST', 
+        headers: {
+      'Accept': 'application/json, text/plain, */*',
+      'Content-Type': 'application/json'
+        },
+        body: credentials
+      }).then(this.handleErrors)
+      .then(response => response.json())
+      .then(parsedData => {
+          localStorage.token = parsedData.auth_token;
+          localStorage.firstname = parsedData.firstname;
+          localStorage.email = parsedData.email;
+          window.location.replace("/")
+        })
+      .catch(error => this.setState({
+        error:true,
+        password: '', 
+        passwordConf: '',
+
+      }))
+      
+    }
   }
 
   handleSnackbarTimeout() {
@@ -90,19 +117,52 @@ export default class Login extends Component {
   handleOnFirstNameChange(ev){
     console.log(ev.target.value)
     this.setState({
-      firstName: ev.target.value
+      firstName: ev.target.value,
+      firstNameValid: validator.isAlpha(ev.target.value),
     })
+    if(this.state.firstNameValid){
+      this.checkIfAllGreen()
+    }
   }
 
   handleOnLastNameChange(ev){
     console.log(ev.target.value)
     this.setState({
-      lastName: ev.target.value
+      lastName: ev.target.value,
+      lastNameValid: validator.isAlpha(ev.target.value),
     })
+    if(this.state.lastNameValid){
+      this.checkIfAllGreen()
+    }
   }
+
+  handlePasswordStrength(n) {
+    n > 0 ? this.setState({passwordStrong: true}) : this.setState({passwordStrong:false })
+  }
+
+  checkIfAllGreen() {
+    debugger
+    if(this.state.emailValid && this.state.passwordStrong && this.state.passwordMatch && this.state.firstNameValid && this.state.lastNameValid) {
+      this.setState({
+        allGreen: true,
+      })
+      }else{
+        this.setState({
+          allGreen: false,
+        })
+      }
+    }
+
 
 
   render(){
+    console.log(this.state.allGreen)
+    const emailClassName = this.state.emailValid ? 'form-group-valid' : 'form-group-inValid'
+    const passwordClassName = this.state.passwordStrong ? 'password-valid' : 'password-inValid'
+    const passwordConfName = this.state.passwordMatch ? 'form-group-valid' : 'form-group-inValid'
+    const firstNameClass = this.state.firstNameValid ? 'form-group-valid' : 'form-group-inValid'
+    const lastNameClass = this.state.lastNameValid ? 'form-group-valid' : 'form-group-inValid'
+    const signUpButtonClassName = this.state.allGreen ? 'signUp-button-valid col-center' : 'signUp-button-inValid col-center'
     return(
           <div className='signUp-wrap'>
             <section className='search-page-header'>
@@ -126,22 +186,28 @@ export default class Login extends Component {
                     </header>
                     <div className='signUp-input-wrap'>
                       <form className='signUp-form'>
-                        <div className='form-group'>
-                          <input type='text' placeholder='Correo electrónico' ref='email' onChange={(ev)=> this.handleOnEmailChange(ev)} ></input>
+                        <div className={emailClassName}>
+                          <input type='email' placeholder='Correo electrónico' ref='email' onChange={(ev)=> this.handleOnEmailChange(ev)} autoComplete='off'></input>
                         </div>
                          <div className='form-group'>
-                          <input type='password' placeholder='Contraseña' onChange={(ev)=> this.handleOnPasswordChange(ev)} value={this.state.password} onKeyPress={(ev)=> this.handleOnInputKeyDown(ev)}></input>
+                          <ReactPasswordStrength 
+                                          placeholder='Contraseña' 
+                                          minScore={1}
+                                          scoreWords={['weak', 'okay', 'good', 'strong', 'great']}
+                                          changeCallback={(ev)=> this.handleOnPasswordChange(ev)}
+                                          inputProps={{placeholder: 'Contraseña', className: passwordClassName}}
+                                          />
                         </div>
-                        <div className='form-group'>
-                          <input type='password' placeholder='Confirmar contraseña' onChange={(ev)=> this.handleOnPasswordConfChange(ev)} value={this.state.passwordConf} onKeyPress={(ev)=> this.handleOnInputKeyDown(ev)}></input>
+                        <div className={passwordConfName}>
+                          <input type='password' placeholder='Confirmar contraseña' onChange={(ev)=> this.handleOnPasswordConfChange(ev)} value={this.state.passwordConf}></input>
                         </div>
-                        <div className='form-group'>
-                          <input type='text' placeholder='Nombre' ref='email' onChange={(ev)=> this.handleOnFirstNameChange(ev)} ></input>
+                        <div className={firstNameClass}>
+                          <input type='text' placeholder='Nombre' ref='email' onChange={(ev)=> this.handleOnFirstNameChange(ev)}></input>
                         </div>
-                        <div className='form-group'>
-                          <input type='text' placeholder='Apellido' ref='email' onChange={(ev)=> this.handleOnLastNameChange(ev)} ></input>
+                        <div className={lastNameClass}>
+                          <input type='text' placeholder='Apellido' ref='email' onChange={(ev)=> this.handleOnLastNameChange(ev)}></input>
                         </div>
-                        <div className='signUp-button col-center' onClick={()=> this.handleOnSignUpSubmit()}>
+                        <div className={signUpButtonClassName} onClick={()=> this.handleOnSignUpSubmit()}>
                           Registar con correo
                         </div>
                       </form>
@@ -165,3 +231,4 @@ export default class Login extends Component {
       )
   }
 }
+

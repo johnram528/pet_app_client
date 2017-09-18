@@ -12,7 +12,7 @@
     padding: 20px;
 }
 
-.signUp-button {
+.signUp-button-valid {
     border: 2px solid #ddd;
     background-color: #00a699;
     width: 250px;
@@ -21,6 +21,16 @@
     color: white;
     border-radius: 3px;
     cursor: pointer;
+}
+
+.signUp-button-inValid {
+    border: 2px solid #ddd;
+    background-color: #ddd;
+    width: 250px;
+    height: 40px;
+    padding-top: 8px;
+    color: white;
+    border-radius: 3px;
 }
 
 .form-group{
@@ -34,6 +44,22 @@
   outline: none
 }
 
+.form-group-valid > input{
+  width: 250px;
+  border: none;
+  border-bottom: 2px solid #80e8e0;
+  outline: none;
+  margin-bottom: 15px;
+}
+
+.form-group-inValid > input{
+  width: 250px;
+  border: none;
+  border-bottom: 2px solid #ff5959;
+  outline: none;
+  margin-bottom: 15px;
+}
+
 [data-react-toolbox="snackbar"] {
   text-align: center;
   color: orangered;
@@ -42,3 +68,47 @@
 .form-group > input:focus{
   border-bottom: 2px solid #80e8e0;
 }
+
+
+.password-valid {
+  width: 250px !important;
+  border: none !important;
+  border-bottom: 2px solid #80e8e0 !important;
+  outline: none !important;
+  font-size: inherit !important;
+  padding: 0 !important;
+
+}
+
+.password-inValid {
+  width: 250px !important;
+  border: none !important;
+  border-bottom: 2px solid #ff5959 !important;
+  outline: none !important;
+  font-size: inherit !important;
+  padding: 0 !important;
+
+}
+
+.ReactPasswordStrength {
+      border: none !important;
+    font-family: inherit !important;
+    font-size: inherit !important;
+  }
+
+.ReactPasswordStrength-strength-bar {
+  display: none;
+}
+
+.ReactPasswordStrength-strength-desc {
+  padding: 0 !important;
+    text-align: initial !important;
+    color: #ddd !important;
+  }
+
+
+
+
+
+
+
